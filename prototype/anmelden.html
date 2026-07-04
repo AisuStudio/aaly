@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aussteller-Anmeldung – CIB 2027 – AALY</title>
+  <!-- works via server (/prototype/) and direct file open -->
+  <link rel="stylesheet" href="kern-aaly.css">
+  <style>
+    /* inline fallback so page is never completely unstyled */
+    body { font-family: "Public Sans", system-ui, sans-serif; }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+<!-- ── KOPFZEILE ── -->
+<header class="kern-kopfzeile" role="banner">
+  <div class="kern-kopfzeile__inner">
+    <a href="index.html" class="kern-kopfzeile__logo" aria-label="AALY – Startseite">
+      <!-- CIB Maskottchen-Logo aus Design System -->
+      <div class="kern-kopfzeile__logo-mark">
+        <svg viewBox="87 177 62 72" width="22" height="22" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M134.4,197.1c3.4,7.1,5.9,17.1,5.9,31.1,0,.1,0,.2-.2.3-7.9,4.1-20.8,4.4-24.8,4.6,0,0-.2,0-.2.1-.3.5-1.4,2.7-1.4,5.6,0,2.3.7,4.6,1.1,5.8,0,.3-.2.5-.4.4-4.4-2.5-8.3-6.7-9.1-12.6,0-.1-.1-.2-.3-.3-4.6-.4-9.3-1.2-13.4-3-1.1-.5-1.8-1.7-1.8-2.9.3-13.7,3-23.1,6.6-29.7,0,0,0,0-.1,0-3.5,0-6.4-.4-6.3-5.6,0-6.4,2.9-13.3,6.4-13.3,3.3,0,5.9,4.3,6.3,10,0,.3.3.4.5.2,5.1-4.6,10.1-5.7,11.7-5.9.2,0,.3-.2.3-.3v-2c0-.2.2-.3.4-.3,1.5.3,6.9,2,12.2,7.9.2.2.5.1.5-.2.5-5.3,3.2-9.2,6.3-9.2,3.5,0,6.3,6.9,6.3,13.3s-4.5,5.6-6,5.6c-.2,0-.4.2-.3.4"/>
+        </svg>
+      </div>
+      AALY
+      <span class="kern-kopfzeile__space-name">CIB 2027</span>
+    </a>
+    <nav class="kern-kopfzeile__nav" aria-label="Space-Navigation">
+      <a href="index.html">Übersicht</a>
+      <a href="artists.html">Artist Alley</a>
+      <a href="events.html">Events</a>
+      <a href="#">Infos</a>
+    </nav>
+    <div class="kern-kopfzeile__actions">
+      <span class="kern-member-chip"><svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Mitglied</span>
+      <div class="kern-kopfzeile__user">
+        <div class="kern-kopfzeile__avatar">
+          <img src="../FakeImages/Avatar copy 4.png" alt="Profilbild Max Schreiber">
+        </div>
+        <span>Max S.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── BREADCRUMB ── -->
+<nav class="kern-breadcrumb" aria-label="Breadcrumb">
+  <div class="kern-breadcrumb__inner">
+    <a href="#">Maniacgeek</a>
+    <span class="kern-breadcrumb__sep" aria-hidden="true">›</span>
+    <a href="index.html">Comic Invasion Berlin</a>
+    <span class="kern-breadcrumb__sep" aria-hidden="true">›</span>
+    <span aria-current="page">Aussteller-Anmeldung</span>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="kern-container" style="max-width:720px; padding-top:var(--s6); padding-bottom:var(--s8);">
+
+    <!-- Page Title -->
+    <div class="u-mb-6">
+      <p class="kern-preline">Comic Invasion Berlin 2027</p>
+      <h1 class="kern-h1">Aussteller-Anmeldung</h1>
+      <p class="kern-body u-mt-3">
+        Bewirb dich als Aussteller:in für die CIB 2027. Die Anmeldung dauert ca. 10 Minuten.
+        Anmeldefrist: <strong>31. Januar 2027</strong>.
+      </p>
+    </div>
+
+    <!-- Progress -->
+    <nav aria-label="Formular-Fortschritt" class="u-mb-6" id="progress-nav">
+      <div class="kern-progress" id="progress-bar">
+        <div class="kern-progress__step kern-progress__step--active" id="step-dot-1">
+          <div class="kern-progress__dot">1</div>
+          <span class="kern-progress__label">Persönliche Daten</span>
+          <div class="kern-progress__line"></div>
+        </div>
+        <div class="kern-progress__step" id="step-dot-2">
+          <div class="kern-progress__dot">2</div>
+          <span class="kern-progress__label">Portfolio</span>
+          <div class="kern-progress__line"></div>
+        </div>
+        <div class="kern-progress__step" id="step-dot-3">
+          <div class="kern-progress__dot">3</div>
+          <span class="kern-progress__label">Ausstellungswünsche</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══ SCHRITT 1 ═══ -->
+    <div class="wizard-panel active" id="panel-1" role="region" aria-label="Schritt 1: Persönliche Daten">
+      <fieldset class="kern-fieldset">
+        <legend class="kern-fieldset__legend">Persönliche Daten</legend>
+
+        <div class="kern-grid kern-grid--2">
+          <div class="kern-field">
+            <label class="kern-label" for="vorname">Vorname <span class="kern-label__req" aria-label="Pflichtfeld">*</span></label>
+            <input class="kern-input" type="text" id="vorname" autocomplete="given-name" required placeholder="z.B. Kim">
+          </div>
+          <div class="kern-field">
+            <label class="kern-label" for="nachname">Nachname <span class="kern-label__req" aria-label="Pflichtfeld">*</span></label>
+            <input class="kern-input" type="text" id="nachname" autocomplete="family-name" required placeholder="z.B. Nakamura">
+          </div>
+        </div>
+
+        <div class="kern-field">
+          <label class="kern-label" for="kuenstlername">Künstlername / Pseudonym</label>
+          <input class="kern-input" type="text" id="kuenstlername" placeholder="Falls abweichend vom bürgerlichen Namen">
+          <p class="kern-hint">Wird in der Artist Alley angezeigt. Leer lassen = echter Name wird verwendet.</p>
+        </div>
+
+        <div class="kern-field">
+          <label class="kern-label" for="email">E-Mail-Adresse <span class="kern-label__req" aria-label="Pflichtfeld">*</span></label>
+          <input class="kern-input" type="email" id="email" autocomplete="email" required value="aisustudio.berlin@gmail.com">
+        </div>
+
+        <div class="kern-field">
+          <label class="kern-label" for="website">Website / Social-Link</label>
+          <input class="kern-input" type="url" id="website" autocomplete="url" placeholder="https://deinewebsite.de">
+          <p class="kern-hint">Instagram, Linktree, eigene Seite – was auch immer du verlinken möchtest.</p>
+        </div>
+
+        <div class="kern-field">
+          <label class="kern-label" for="heimatstadt">Stadt / Region <span class="kern-label__req" aria-label="Pflichtfeld">*</span></label>
+          <input class="kern-input" type="text" id="heimatstadt" autocomplete="address-level2" required placeholder="z.B. Berlin">
+        </div>
+      </fieldset>
+
+      <div class="u-flex-between u-mt-5">
+        <a href="index.html" class="kern-btn kern-btn--secondary">Abbrechen</a>
+        <button type="button" class="kern-btn kern-btn--primary" onclick="goToStep(2)">
+          Weiter: Portfolio
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ SCHRITT 2 ═══ -->
+    <div class="wizard-panel" id="panel-2" role="region" aria-label="Schritt 2: Portfolio">
+      <fieldset class="kern-fieldset">
+        <legend class="kern-fieldset__legend">Dein Portfolio</legend>
+
+        <div class="kern-field">
+          <label class="kern-label" for="bio">Über mich / Artist-Statement <span class="kern-label__req" aria-label="Pflichtfeld">*</span></label>
+          <textarea class="kern-textarea" id="bio" required placeholder="Erzähl uns von dir, deinem Stil, was dich antreibt … (max. 600 Zeichen)" maxlength="600" oninput="document.getElementById('bio-count').textContent=this.value.length"></textarea>
+          <p class="kern-hint"><span id="bio-count">0</span>/600 Zeichen</p>
+        </div>
+
+        <div class="kern-field">
+          <label class="kern-label" for="genre">Künstlerische Richtung <span class="kern-label__req" aria-label="Pflichtfeld">*</span></label>
+          <select class="kern-select" id="genre" required>
+            <option value="">Bitte auswählen …</option>
+            <option value="manga">Manga / Anime-Stil</option>
+            <option value="graphic-novel">Graphic Novel / Comicstrip</option>
+            <option value="illustration">Illustration / Kinderbuch</option>
+            <option value="konzept">Konzeptkunst / Sci-Fi / Fantasy</option>
+            <option value="humor" selected>Humor / Satire</option>
+            <option value="abstract">Abstrakt / Experimentell</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset class="kern-fieldset">
+        <legend class="kern-fieldset__legend">Portfolio-Bilder</legend>
+        <p class="kern-body u-mb-4" style="font-size:var(--text-sm);">Lade bis zu 3 Werke hoch, die deinen Stil repräsentieren. Formate: JPG, PNG · max. 5 MB pro Bild.</p>
+
+        <div class="kern-grid kern-grid--3" style="gap:var(--s4);">
+          <div class="kern-field">
+            <label class="kern-label" for="bild-1">Bild 1 <span class="kern-label__req">*</span></label>
+            <label class="kern-file-input" for="bild-1">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-bottom:4px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span style="font-size:var(--text-sm); font-weight:700;">Bild auswählen</span>
+              <span class="u-text-xs u-text-muted">JPG / PNG · max. 5 MB</span>
+              <input type="file" id="bild-1" accept="image/jpeg,image/png" onchange="previewImage(this,'prev-1')">
+            </label>
+            <div id="prev-1" style="display:none; margin-top:var(--s2); border-radius:var(--r-md); overflow:hidden; aspect-ratio:16/9;"><img style="width:100%;height:100%;object-fit:cover;" alt="Vorschau 1"></div>
+          </div>
+          <div class="kern-field">
+            <label class="kern-label" for="bild-2">Bild 2</label>
+            <label class="kern-file-input" for="bild-2">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-bottom:4px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span style="font-size:var(--text-sm); font-weight:700;">Bild auswählen</span>
+              <span class="u-text-xs u-text-muted">JPG / PNG · max. 5 MB</span>
+              <input type="file" id="bild-2" accept="image/jpeg,image/png" onchange="previewImage(this,'prev-2')">
+            </label>
+            <div id="prev-2" style="display:none; margin-top:var(--s2); border-radius:var(--r-md); overflow:hidden; aspect-ratio:16/9;"><img style="width:100%;height:100%;object-fit:cover;" alt="Vorschau 2"></div>
+          </div>
+          <div class="kern-field">
+            <label class="kern-label" for="bild-3">Bild 3</label>
+            <label class="kern-file-input" for="bild-3">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-bottom:4px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span style="font-size:var(--text-sm); font-weight:700;">Bild auswählen</span>
+              <span class="u-text-xs u-text-muted">JPG / PNG · max. 5 MB</span>
+              <input type="file" id="bild-3" accept="image/jpeg,image/png" onchange="previewImage(this,'prev-3')">
+            </label>
+            <div id="prev-3" style="display:none; margin-top:var(--s2); border-radius:var(--r-md); overflow:hidden; aspect-ratio:16/9;"><img style="width:100%;height:100%;object-fit:cover;" alt="Vorschau 3"></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="u-flex-between u-mt-5">
+        <button type="button" class="kern-btn kern-btn--secondary" onclick="goToStep(1)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Zurück
+        </button>
+        <button type="button" class="kern-btn kern-btn--primary" onclick="goToStep(3)">
+          Weiter: Ausstellungswünsche
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ SCHRITT 3 ═══ -->
+    <div class="wizard-panel" id="panel-3" role="region" aria-label="Schritt 3: Ausstellungswünsche">
+      <fieldset class="kern-fieldset">
+        <legend class="kern-fieldset__legend">Tisch-Größe</legend>
+        <div class="kern-radio-group" role="radiogroup">
+          <label class="kern-radio">
+            <input type="radio" name="tisch" value="halb">
+            <span class="kern-radio__label">
+              <span>Halber Tisch (1 m)</span>
+              <span class="kern-radio__sublabel">Ideal für Solo-Artists mit kompaktem Sortiment · 60 €</span>
+            </span>
+          </label>
+          <label class="kern-radio">
+            <input type="radio" name="tisch" value="ganz" checked>
+            <span class="kern-radio__label">
+              <span>Ganzer Tisch (2 m) <span class="kern-badge kern-badge--brand" style="margin-left:4px;">Beliebt</span></span>
+              <span class="kern-radio__sublabel">Standard-Tischgröße · 110 €</span>
+            </span>
+          </label>
+          <label class="kern-radio">
+            <input type="radio" name="tisch" value="doppelt">
+            <span class="kern-radio__label">
+              <span>Doppeltisch (4 m)</span>
+              <span class="kern-radio__sublabel">Für größere Aufbauten oder gemeinsame Stände · 200 €</span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="kern-fieldset">
+        <legend class="kern-fieldset__legend">Extras &amp; Zubehör</legend>
+        <div class="kern-checkbox-group" role="group">
+          <label class="kern-checkbox">
+            <input type="checkbox" name="extras" value="strom">
+            <span class="kern-checkbox__label">
+              <span>Stromanschluss</span>
+              <span class="kern-checkbox__sublabel">Für Leuchtrahmen, Tablet-Display etc. · +15 €</span>
+            </span>
+          </label>
+          <label class="kern-checkbox">
+            <input type="checkbox" name="extras" value="display" checked>
+            <span class="kern-checkbox__label">
+              <span>Sichtschutz-Display (Rückwand 1 m hoch)</span>
+              <span class="kern-checkbox__sublabel">Trennung zum Nachbartisch · kostenlos</span>
+            </span>
+          </label>
+          <label class="kern-checkbox">
+            <input type="checkbox" name="extras" value="fruehaufbau">
+            <span class="kern-checkbox__label">
+              <span>Frühaufbau (Freitag 21. Mai ab 18 Uhr)</span>
+              <span class="kern-checkbox__sublabel">Statt Samstag früh aufbauen · +10 €</span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="kern-fieldset">
+        <legend class="kern-fieldset__legend">Workshop anbieten?</legend>
+        <div class="kern-radio-group" role="radiogroup">
+          <label class="kern-radio">
+            <input type="radio" name="workshop" value="nein">
+            <span class="kern-radio__label"><span>Nein, ich stelle nur aus</span></span>
+          </label>
+          <label class="kern-radio">
+            <input type="radio" name="workshop" value="ja" checked>
+            <span class="kern-radio__label">
+              <span>Ja – Workshop: „Webcomics – Von null auf tausend Follower"</span>
+              <span class="kern-radio__sublabel">Fr 22. Mai · 18:30–19:30 · Raum 2 · bereits bestätigt</span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="kern-field">
+        <label class="kern-label" for="notizen">Zusätzliche Anmerkungen</label>
+        <textarea class="kern-textarea" id="notizen" placeholder="Barrierefreiheit, besondere Aufbauanforderungen, Fragen …" style="min-height:90px;"></textarea>
+      </div>
+
+      <div class="u-flex-between u-mt-5">
+        <button type="button" class="kern-btn kern-btn--secondary" onclick="goToStep(2)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Zurück
+        </button>
+        <button type="button" class="kern-btn kern-btn--primary" onclick="goToStep(4)">
+          Zusammenfassung ansehen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ SCHRITT 4: ZUSAMMENFASSUNG ═══ -->
+    <div class="wizard-panel" id="panel-4" role="region" aria-label="Zusammenfassung">
+      <div class="kern-alert kern-alert--info u-mb-5" role="note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="kern-alert__icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <p class="kern-alert__title">Bitte prüfe deine Angaben</p>
+          <p>Du kannst jeden Abschnitt noch bearbeiten. Nach dem Absenden ist keine Änderung mehr möglich.</p>
+        </div>
+      </div>
+
+      <div class="kern-summary u-mb-5">
+        <div class="kern-summary__section">
+          <div class="kern-summary__header">
+            <span class="kern-summary__title">Schritt 1 · Persönliche Daten</span>
+            <button class="kern-btn kern-btn--ghost kern-btn--sm" onclick="goToStep(1)">Bearbeiten</button>
+          </div>
+          <dl class="kern-dl">
+            <dt>Name</dt>         <dd>Max Schreiber</dd>
+            <dt>Künstlername</dt> <dd>@maxschreiber</dd>
+            <dt>E-Mail</dt>       <dd>aisustudio.berlin@gmail.com</dd>
+            <dt>Website</dt>      <dd>maxschreiber.de</dd>
+            <dt>Stadt</dt>        <dd>Berlin</dd>
+          </dl>
+        </div>
+        <div class="kern-summary__section">
+          <div class="kern-summary__header">
+            <span class="kern-summary__title">Schritt 2 · Portfolio</span>
+            <button class="kern-btn kern-btn--ghost kern-btn--sm" onclick="goToStep(2)">Bearbeiten</button>
+          </div>
+          <dl class="kern-dl">
+            <dt>Richtung</dt> <dd>Humor / Satire</dd>
+            <dt>Bio</dt>      <dd>Comiczeichner mit Fokus auf absurden Alltagssituationen. Erstes gedrucktes Zine „Mittwochsmüde" zur CIB.</dd>
+            <dt>Bilder</dt>   <dd>3 Bilder hochgeladen</dd>
+          </dl>
+        </div>
+        <div class="kern-summary__section">
+          <div class="kern-summary__header">
+            <span class="kern-summary__title">Schritt 3 · Ausstellungswünsche</span>
+            <button class="kern-btn kern-btn--ghost kern-btn--sm" onclick="goToStep(3)">Bearbeiten</button>
+          </div>
+          <dl class="kern-dl">
+            <dt>Tisch</dt>        <dd>Ganzer Tisch (2 m) · 110 €</dd>
+            <dt>Extras</dt>       <dd>Sichtschutz-Display (kostenlos)</dd>
+            <dt>Workshop</dt>     <dd>Ja · „Webcomics – Von null auf tausend Follower" · Fr 22. Mai 18:30</dd>
+            <dt>Anmerkungen</dt>  <dd>–</dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Kostensummary -->
+      <div class="kern-callout u-mb-5">
+        <div class="u-flex-between u-mb-3">
+          <span class="u-font-bold">Ganzer Tisch (2 m)</span>
+          <span>110,00 €</span>
+        </div>
+        <div class="u-flex-between u-mb-3" style="font-size:var(--text-sm); color:var(--color-text-muted);">
+          <span>Sichtschutz-Display</span><span>0,00 €</span>
+        </div>
+        <hr class="u-divider">
+        <div class="u-flex-between" style="font-weight:800; font-size:var(--text-lg);">
+          <span>Gesamt (zzgl. MwSt.)</span>
+          <span style="color:var(--cib-purple);">110,00 €</span>
+        </div>
+        <p class="kern-hint u-mt-3">Zahlung per Überweisung nach Zusage – kein Vorauszahlung nötig.</p>
+      </div>
+
+      <!-- AGB -->
+      <div class="kern-field u-mb-5">
+        <label class="kern-checkbox">
+          <input type="checkbox" name="agb" required>
+          <span class="kern-checkbox__label">
+            <span>Ich stimme den <a href="#">Teilnahmebedingungen der CIB 2027</a> zu. <span class="kern-label__req">*</span></span>
+            <span class="kern-checkbox__sublabel">Einschließlich Datenschutzhinweis und Storno-Regelung.</span>
+          </span>
+        </label>
+      </div>
+
+      <div class="u-flex-between">
+        <button type="button" class="kern-btn kern-btn--secondary" onclick="goToStep(3)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Zurück
+        </button>
+        <button type="button" class="kern-btn kern-btn--primary" onclick="goToStep(5)" style="padding-inline:var(--s6);">
+          Jetzt verbindlich anmelden <svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ BESTÄTIGUNG ═══ -->
+    <div class="wizard-panel" id="panel-5" role="region" aria-label="Anmeldung erfolgreich">
+      <div style="text-align:center; padding:var(--s8) 0;">
+        <div style="width:72px; height:72px; background:var(--color-success-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto var(--s5);">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h2 class="kern-h2 u-mb-4">Anmeldung eingegangen!</h2>
+
+        <div class="kern-alert kern-alert--success u-mb-5" role="alert" style="text-align:left;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="kern-alert__icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <div>
+            <p class="kern-alert__title">Deine Anmeldung ist eingegangen</p>
+            <p>Wir haben dir eine Bestätigungsmail an <strong>aisustudio.berlin@gmail.com</strong> geschickt. Du erhältst bis <strong>15. Februar 2027</strong> eine Rückmeldung.</p>
+          </div>
+        </div>
+
+        <dl class="kern-dl u-box u-mb-5" style="text-align:left; max-width:400px; margin:0 auto var(--s5);">
+          <dt>Anmelde-ID</dt>    <dd style="font-family:monospace; font-weight:800; color:var(--cib-purple);">#CIB-2027-0042</dd>
+          <dt>Status</dt>        <dd><span class="kern-badge kern-badge--info">Eingereicht</span></dd>
+          <dt>Eingereicht am</dt><dd>4. Juli 2026, 14:32 Uhr</dd>
+        </dl>
+
+        <div class="u-flex u-gap-3" style="justify-content:center; flex-wrap:wrap;">
+          <a href="index.html" class="kern-btn kern-btn--primary">Zum Space</a>
+          <a href="events.html" class="kern-btn kern-btn--secondary">Events ansehen</a>
+          <a href="artists.html" class="kern-btn kern-btn--secondary">Artist Alley</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="kern-footer" role="contentinfo">
+  <div class="kern-footer__inner">
+    <div><span class="kern-footer__brand">AALY</span> · CIB 2027 · Festsaal Kreuzberg, 22.–23. Mai</div>
+    <nav class="kern-footer__links" aria-label="Footer">
+      <a href="#">Datenschutz</a>
+      <a href="#">Barrierefreiheit</a>
+      <a href="#">Impressum</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function goToStep(n) {
+  document.querySelectorAll('.wizard-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + n).classList.add('active');
+  updateProgress(n);
+  document.getElementById('main-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function updateProgress(step) {
+  const nav = document.getElementById('progress-nav');
+  if (nav) nav.style.display = step >= 4 ? 'none' : '';
+  for (let i = 1; i <= 3; i++) {
+    const dot = document.getElementById('step-dot-' + i);
+    if (!dot) continue;
+    dot.classList.remove('kern-progress__step--active', 'kern-progress__step--done');
+    const circle = dot.querySelector('.kern-progress__dot');
+    if (i < step)      { dot.classList.add('kern-progress__step--done');   circle.innerHTML = '<svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'; }
+    else if (i === step){ dot.classList.add('kern-progress__step--active'); circle.textContent = i; }
+    else               { circle.textContent = i; }
+  }
+}
+
+function previewImage(input, id) {
+  if (!input.files || !input.files[0]) return;
+  const wrap = document.getElementById(id);
+  const reader = new FileReader();
+  reader.onload = e => { wrap.style.display = 'block'; wrap.querySelector('img').src = e.target.result; };
+  reader.readAsDataURL(input.files[0]);
+}
+</script>
+
+</body>
+</html>

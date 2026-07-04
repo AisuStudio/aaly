@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moustaphea Mustamania – Artist Portfolio – CIB 2027 – AALY</title>
+  <link rel="stylesheet" href="/prototype/kern-aaly.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+<header class="kern-kopfzeile" role="banner">
+  <div class="kern-kopfzeile__inner">
+    <a href="index.html" class="kern-kopfzeile__logo" aria-label="AALY – Startseite">
+      <div class="kern-kopfzeile__logo-mark">
+        <svg viewBox="87 177 62 72" width="22" height="22" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M134.4,197.1c3.4,7.1,5.9,17.1,5.9,31.1,0,.1,0,.2-.2.3-7.9,4.1-20.8,4.4-24.8,4.6,0,0-.2,0-.2.1-.3.5-1.4,2.7-1.4,5.6,0,2.3.7,4.6,1.1,5.8,0,.3-.2.5-.4.4-4.4-2.5-8.3-6.7-9.1-12.6,0-.1-.1-.2-.3-.3-4.6-.4-9.3-1.2-13.4-3-1.1-.5-1.8-1.7-1.8-2.9.3-13.7,3-23.1,6.6-29.7,0,0,0,0-.1,0-3.5,0-6.4-.4-6.3-5.6,0-6.4,2.9-13.3,6.4-13.3,3.3,0,5.9,4.3,6.3,10,0,.3.3.4.5.2,5.1-4.6,10.1-5.7,11.7-5.9.2,0,.3-.2.3-.3v-2c0-.2.2-.3.4-.3,1.5.3,6.9,2,12.2,7.9.2.2.5.1.5-.2.5-5.3,3.2-9.2,6.3-9.2,3.5,0,6.3,6.9,6.3,13.3s-4.5,5.6-6,5.6c-.2,0-.4.2-.3.4"/>
+        </svg>
+      </div>
+      AALY
+      <span class="kern-kopfzeile__space-name">CIB 2027</span>
+    </a>
+    <nav class="kern-kopfzeile__nav" aria-label="Space-Navigation">
+      <a href="index.html">Übersicht</a>
+      <a href="artists.html" aria-current="page">Artist Alley</a>
+      <a href="events.html">Events</a>
+      <a href="#">Infos</a>
+    </nav>
+    <div class="kern-kopfzeile__actions">
+      <span class="kern-member-chip"><svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Mitglied</span>
+      <div class="kern-kopfzeile__user">
+        <div class="kern-kopfzeile__avatar">
+          <img src="/FakeImages/Avatar copy 4.png" alt="Profilbild Max Schreiber">
+        </div>
+        <span>Max S.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="kern-breadcrumb" aria-label="Breadcrumb">
+  <div class="kern-breadcrumb__inner">
+    <a href="#">Maniacgeek</a>
+    <span class="kern-breadcrumb__sep" aria-hidden="true">›</span>
+    <a href="index.html">Comic Invasion Berlin</a>
+    <span class="kern-breadcrumb__sep" aria-hidden="true">›</span>
+    <a href="artists.html">Artist Alley</a>
+    <span class="kern-breadcrumb__sep" aria-hidden="true">›</span>
+    <span aria-current="page">Moustaphea Mustamania</span>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- PROFILE HEADER -->
+  <div class="kern-profile-header" role="banner">
+    <div class="kern-profile-header__inner">
+      <div class="kern-profile-header__avatar-wrap">
+        <img src="/FakeImages/Avatar.png" alt="Profilfoto Moustaphea Mustamania">
+      </div>
+      <div class="kern-profile-header__meta">
+        <p class="kern-profile-header__preline">Comic Invasion Berlin 2027 · Artist</p>
+        <h1 class="kern-profile-header__name">Moustaphea Mustamania</h1>
+        <p class="kern-profile-header__handle">@moustaphea · Berlin, Deutschland</p>
+        <div class="kern-profile-header__tags">
+          <span class="kern-badge kern-badge--brand">Ausstellend</span>
+          <span class="kern-badge kern-badge--dark">Tisch 12</span>
+          <span class="kern-badge kern-badge--accent">Manga</span>
+          <span class="kern-badge kern-badge--accent">Urban Fantasy</span>
+          <span class="kern-badge kern-badge--info">Kuratorin: Panelwechsel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Tabs inside header -->
+    <div class="kern-container">
+      <nav class="kern-profile-header__nav" aria-label="Profil-Bereiche">
+        <a href="#werke" class="active" onclick="switchTab(this,'werke')">Werke (12)</a>
+        <a href="#ueber" onclick="switchTab(this,'ueber')">Über Moustaphea</a>
+        <a href="#events" onclick="switchTab(this,'events')">Events (2)</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="kern-container kern-page" style="padding-top:var(--s6);">
+
+    <!-- ── TAB: WERKE ── -->
+    <div id="tab-werke" class="tab-content active">
+      <div class="kern-grid kern-grid--sidebar">
+
+        <!-- Main: Artwork Grid -->
+        <div style="order:2;">
+          <div class="kern-section-header u-mb-4">
+            <div class="kern-section-header__left">
+              <h2 class="kern-h3">Werke</h2>
+              <p class="u-text-sm u-text-muted">12 Arbeiten im Space</p>
+            </div>
+            <div class="u-flex u-gap-2">
+              <button class="kern-btn kern-btn--sm kern-btn--secondary">Alle</button>
+              <button class="kern-btn kern-btn--sm kern-btn--ghost">Manga</button>
+              <button class="kern-btn kern-btn--sm kern-btn--ghost">Illustration</button>
+            </div>
+          </div>
+
+          <div class="kern-artwork-grid" style="grid-template-columns:repeat(2,1fr);">
+
+            <figure class="kern-artwork-item">
+              <img src="/FakeImages/Art.png" alt="Sprechblase im Grünen – Acryl auf Leinwand, 2026">
+              <figcaption class="kern-artwork-item__label">Sprechblase im Grünen · 2026</figcaption>
+            </figure>
+
+            <figure class="kern-artwork-item">
+              <img src="/FakeImages/Art copy.png" alt="Nachtgespräch – Digital, 2025">
+              <figcaption class="kern-artwork-item__label">Nachtgespräch · 2025</figcaption>
+            </figure>
+
+            <figure class="kern-artwork-item">
+              <img src="/FakeImages/Art copy 2.png" alt="Stille Stimme – Tusche, 2026">
+              <figcaption class="kern-artwork-item__label">Stille Stimme · 2026</figcaption>
+            </figure>
+
+            <figure class="kern-artwork-item">
+              <img src="/FakeImages/Art copy 3.png" alt="Urban Fable I – Digital, 2027">
+              <figcaption class="kern-artwork-item__label">Urban Fable I · 2027</figcaption>
+            </figure>
+
+          </div>
+
+          <div style="text-align:center; margin-top:var(--s5);">
+            <a href="#" class="kern-btn kern-btn--secondary">8 weitere Werke laden</a>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div style="order:1;">
+
+          <div class="kern-callout u-mb-5">
+            <p class="u-text-xs u-font-bold" style="text-transform:uppercase; letter-spacing:0.08em; color:var(--color-text-muted); margin-bottom:var(--s3);">Beim Festival</p>
+            <dl class="kern-dl">
+              <dt>Tisch</dt>     <dd><strong>Nr. 12</strong> · Reihe B</dd>
+              <dt>Tag 1</dt>     <dd>Fr 22. Mai · 11–20 Uhr</dd>
+              <dt>Tag 2</dt>     <dd>Sa 23. Mai · 11–18 Uhr</dd>
+              <dt>Signierstunde</dt><dd>Sa 13:00–14:00</dd>
+              <dt>Frühaufbau</dt><dd>Fr ab 18:00 Uhr</dd>
+            </dl>
+          </div>
+
+          <div class="u-box u-mb-5">
+            <p class="u-text-xs u-font-bold u-text-muted u-mb-3" style="text-transform:uppercase; letter-spacing:0.08em;">Am Tisch erhältlich</p>
+            <div class="u-flex u-gap-2" style="flex-wrap:wrap;">
+              <span class="kern-badge kern-badge--default">Prints A4/A3</span>
+              <span class="kern-badge kern-badge--default">Postkarten</span>
+              <span class="kern-badge kern-badge--default">Zine „Hoshi No Ko"</span>
+              <span class="kern-badge kern-badge--default">Aufkleber</span>
+              <span class="kern-badge kern-badge--brand">Limitiert: Risograph-Set</span>
+            </div>
+          </div>
+
+          <div class="u-box u-mb-5">
+            <p class="u-text-xs u-font-bold u-text-muted u-mb-3" style="text-transform:uppercase; letter-spacing:0.08em;">Links</p>
+            <div class="u-flex" style="flex-direction:column; gap:var(--s2);">
+              <a href="#" style="font-size:var(--text-sm); font-weight:600;"><svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> moustapheamura.de ↗</a>
+              <a href="#" style="font-size:var(--text-sm); font-weight:600;">📸 Instagram: @moustaphea ↗</a>
+              <a href="#" style="font-size:var(--text-sm); font-weight:600;">🛒 Shop: moustaphea.bigcartel.com ↗</a>
+            </div>
+          </div>
+
+          <a href="#" class="kern-btn kern-btn--primary kern-btn--full">
+            Nachricht schicken
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── TAB: ÜBER ── -->
+    <div id="tab-ueber" class="tab-content" style="display:none;">
+      <div class="kern-grid kern-grid--sidebar">
+        <div style="order:2;">
+          <h2 class="kern-h3 u-mb-4">Über Moustaphea Mustamania</h2>
+          <p class="kern-body u-mb-4">
+            Moustaphea Mustamania ist Manga-Artist und Illustratorin aus Berlin-Neukölln. Seit 2019 ist sie regelmäßig auf der CIB dabei und gilt in der Berliner Comic-Szene als eine der produktivsten Stimmen im Urban-Fantasy-Genre.
+          </p>
+          <p class="kern-body u-mb-4">
+            Ihr Stil verbindet klassisches Manga-Inking mit leuchtenden, digitalen Farbwelten. Ihre Figuren bewegen sich oft zwischen zwei Welten: dem realen Berlin und einem mythologisch aufgeladenen Parallel-Berlin, das sie über mehrere Zine-Serien entwickelt.
+          </p>
+          <p class="kern-body u-mb-5">
+            2027 kuratiert sie erstmals eine Ausstellung: „Panelwechsel" in der Galerie Wedding bringt 12 CIB-Artists zusammen und läuft bis Anfang Juni.
+          </p>
+          <div class="kern-callout--accent kern-callout">
+            <p class="u-text-sm u-font-bold u-mb-2">Zitat</p>
+            <blockquote style="font-size:var(--text-lg); font-style:italic; line-height:1.6; color:var(--cib-purple-dark);">
+              „Ich zeichne die Stadt, wie ich sie nachts um zwei imaginiere, wenn niemand sonst wach ist."
+            </blockquote>
+          </div>
+        </div>
+        <div style="order:1;">
+          <div class="u-box u-mb-5">
+            <p class="u-text-xs u-font-bold u-text-muted u-mb-3" style="text-transform:uppercase; letter-spacing:0.08em;">Steckbrief</p>
+            <dl class="kern-dl">
+              <dt>Wohnort</dt>     <dd>Berlin-Neukölln</dd>
+              <dt>Genre</dt>       <dd>Manga, Urban Fantasy, Illustration</dd>
+              <dt>Medium</dt>      <dd>Tusche, Procreate, Risograph</dd>
+              <dt>CIB dabei seit</dt><dd>2019 (4× ausgestellt)</dd>
+              <dt>Sprachen</dt>    <dd>Deutsch, Englisch, Japanisch</dd>
+            </dl>
+          </div>
+          <a href="#" class="kern-btn kern-btn--primary kern-btn--full u-mb-3">Nachricht schicken</a>
+          <a href="#" class="kern-btn kern-btn--secondary kern-btn--full">Auf Maniacgeek folgen</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TAB: EVENTS ── -->
+    <div id="tab-events" class="tab-content" style="display:none;">
+      <h2 class="kern-h3 u-mb-5">Events bei der CIB 2027</h2>
+      <div class="kern-grid kern-grid--events">
+
+        <article class="kern-card kern-card--event">
+          <div class="kern-event-date" aria-hidden="true">
+            <div class="date-day">22</div>
+            <div class="date-month">MAI</div>
+          </div>
+          <div class="kern-card__body">
+            <div class="kern-card__event-info">
+              <div class="kern-card__tags">
+                <span class="kern-badge kern-badge--info">Podium</span>
+              </div>
+              <h3 class="kern-card__title">Podiumsdiskussion: Comics &amp; Künstliche Intelligenz</h3>
+              <div class="kern-card__meta">
+                <span>🕔 17:00–18:30 Uhr</span>
+                <span><svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Hauptbühne</span>
+                <span>Freier Eintritt</span>
+              </div>
+            </div>
+            <a href="events.html" class="kern-btn kern-btn--ghost kern-btn--sm" style="flex-shrink:0;">Details →</a>
+          </div>
+        </article>
+
+        <article class="kern-card kern-card--event">
+          <div class="kern-event-date" style="background:var(--cib-yellow);" aria-hidden="true">
+            <div class="date-day" style="color:var(--cib-ink);">23</div>
+            <div class="date-month" style="color:rgba(0,0,0,0.6);">MAI</div>
+          </div>
+          <div class="kern-card__body">
+            <div class="kern-card__event-info">
+              <div class="kern-card__tags">
+                <span class="kern-badge kern-badge--brand">Signierstunde</span>
+              </div>
+              <h3 class="kern-card__title">Signierstunde: Moustaphea Mustamania</h3>
+              <div class="kern-card__meta">
+                <span>🕐 13:00–14:00 Uhr</span>
+                <span><svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Tisch 12, Artist Alley</span>
+                <span>Kein Ticket nötig</span>
+              </div>
+            </div>
+            <a href="events.html" class="kern-btn kern-btn--ghost kern-btn--sm" style="flex-shrink:0;">Details →</a>
+          </div>
+        </article>
+
+        <article class="kern-card kern-card--event">
+          <div class="kern-event-date" style="background:var(--cib-purple-dark);" aria-hidden="true">
+            <div class="date-day" style="font-size:var(--text-xl); color:#fff;">10–</div>
+            <div class="date-month" style="color:rgba(255,255,255,0.7);">JUN</div>
+          </div>
+          <div class="kern-card__body">
+            <div class="kern-card__event-info">
+              <div class="kern-card__tags">
+                <span class="kern-badge kern-badge--accent">Satellit</span>
+                <span class="kern-badge kern-badge--default">Kuratorin</span>
+              </div>
+              <h3 class="kern-card__title">Panelwechsel – Gruppenausstellung (kuratiert von Moustaphea)</h3>
+              <div class="kern-card__meta">
+                <span>🗓 10. Mai – 7. Jun 2027</span>
+                <span><svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Galerie Wedding</span>
+              </div>
+            </div>
+            <a href="events.html" class="kern-btn kern-btn--ghost kern-btn--sm" style="flex-shrink:0;">Details →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="kern-footer" role="contentinfo">
+  <div class="kern-footer__inner">
+    <div><span class="kern-footer__brand">AALY</span> · CIB 2027 · Festsaal Kreuzberg, 22.–23. Mai</div>
+    <nav class="kern-footer__links" aria-label="Footer">
+      <a href="#">Datenschutz</a>
+      <a href="#">Barrierefreiheit</a>
+      <a href="#">Impressum</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function switchTab(link, tab) {
+  event.preventDefault();
+  document.querySelectorAll('.kern-profile-header__nav a').forEach(a => a.classList.remove('active'));
+  link.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+  document.getElementById('tab-' + tab).style.display = '';
+  document.getElementById('tab-' + tab).style.display = 'block';
+}
+</script>
+</body>
+</html>

@@ -15,7 +15,7 @@
   --cib-yellow-dim:    #fef3cc;   /* Tint für Backgrounds */
 
   /* BG Scale (warm, aus SVG-Graureihe) */
-  --cib-ink:           #1c1404;   /* BG Dark / Main Interaction Dark – dunkelste Farbe */
+  --cib-ink:           #12100b;   /* BG Dark / Main Interaction Dark – dunkelste Farbe */
   --cib-ink-mid:       #5f470a;   /* Dark warm */
   --cib-ink-soft:      #3a2a0d;   /* Zwischenton */
 
@@ -45,7 +45,7 @@
   --color-surface-2:   #e3e1db;
   --color-border:      #c4c1ba;   /* aus Design System */
   --color-border-dark: #918b7f;
-  --color-text:        #1c1404;   /* BG Dark = Text Dark */
+  --color-text:        #12100b;   /* BG Dark = Text Dark */
   --color-text-muted:  #5e5644;
   --color-text-xmuted: #918b7f;
 
@@ -310,9 +310,9 @@ strong { font-weight: 700; }
 }
 .kern-btn--secondary {
   background: transparent; color: var(--color-text);
-  border-color: var(--color-border-dark);
+  border-color: var(--cib-ink);
 }
-.kern-btn--secondary:hover { background: var(--color-surface); border-color: var(--color-text); }
+.kern-btn--secondary:hover { background: var(--color-surface); border-color: var(--cib-ink); }
 .kern-btn--outline-white {
   background: transparent; color: #fff;
   border-color: rgba(255,255,255,0.35);

@@ -1,4 +1,4 @@
-/* KERN UX v2.6.4 – CIB / AALY Theme */
+/* KERN UX v2.6.4 – CIB / CIB Theme */
 /* KERN-Struktur + CIB Editorial-Aesthetik */
 
 .lucide { vertical-align: -0.2em; flex-shrink: 0; }
@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap');
 
 :root {
-  /* ── AALY Design System (aus AALY_DesignComponents.svg) ── */
+  /* ── CIB Design System (aus CIB_DesignComponents.svg) ── */
 
   /* Main Interactions */
   --cib-yellow:        #fcbb0c;   /* Main Interaction Bright */
@@ -1351,3 +1351,25 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
   background: none; border: none; cursor: pointer;
   color: inherit; font: inherit; padding: 0; text-decoration: none;
 }
+
+/* ── Maskottchen-Platzierungen ── */
+.kern-mascot-footer {
+  display: flex; justify-content: flex-end; align-items: flex-end;
+  padding: 0 20px; height: 72px; overflow: hidden; pointer-events: none;
+}
+.kern-mascot-footer img { height: 68px; opacity: 0.32; display: block; }
+.kern-mascot-footer img:first-child { height: 52px; opacity: 0.15; margin-right: -6px; transform: scaleX(-1); }
+
+.kern-mascot-empty {
+  display: flex; flex-direction: column; align-items: center;
+  padding: var(--s6) var(--s4) var(--s4); text-align: center;
+}
+.kern-mascot-empty img { height: 130px; margin-bottom: var(--s3); }
+.kern-mascot-empty__label { font-size: 13px; color: var(--color-text-muted); line-height: 1.5; }
+
+.kern-mascot-header {
+  display: flex; align-items: flex-end; gap: var(--s4);
+  margin-bottom: var(--s4);
+}
+.kern-mascot-header__text { flex: 1; }
+.kern-mascot-header img { height: 100px; flex-shrink: 0; display: block; }

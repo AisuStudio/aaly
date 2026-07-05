@@ -54,6 +54,7 @@
 
 <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
+<!-- ── Platform Bar (Maniacgeek-Kontext) ── -->
 <div class="kern-platform-bar">
   <a href="#" class="kern-platform-bar__link" onclick="return false;">
     <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -88,7 +89,7 @@
 <main id="main-content">
 <div class="chat-layout">
 
-  <!-- ── CHANNEL SIDEBAR ── -->
+  <!-- ── Channel-Sidebar (Gruppen & Direktnachrichten) ── -->
   <aside class="chat-sidebar">
     <div class="chat-sidebar-header">Gruppen & Channels</div>
 
@@ -142,10 +143,10 @@
     </div>
   </aside>
 
-  <!-- ── CHAT MAIN ── -->
+  <!-- ── Chat-Hauptbereich (Header, Nachrichten, Eingabe) ── -->
   <div class="chat-main">
 
-    <!-- Channel header -->
+    <!-- ── Channel-Header ── -->
     <div class="chat-header">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-text-muted)"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       <div>
@@ -160,7 +161,7 @@
       </div>
     </div>
 
-    <!-- Messages -->
+    <!-- ── Nachrichten-Verlauf ── -->
     <div class="chat-messages">
 
       <div class="chat-msg-divider">Freitag, 22. Mai 2027</div>
@@ -293,7 +294,7 @@
 
     </div><!-- /chat-messages -->
 
-    <!-- Input bar (painted door) -->
+    <!-- ── Eingabe-Bar (Painted Door) ── -->
     
       <!-- Empty-State (sichtbar wenn Channel leer) -->
       <div class="kern-mascot-empty" id="chatEmpty" style="display:none;">
@@ -315,7 +316,7 @@
 </div><!-- /chat-layout -->
 </main>
 
-<!-- Bottom nav (mobile) -->
+<!-- ── Bottom Navigation (mobile, wird ab 900px ausgeblendet) ── -->
 
 <nav class="kern-bottom-nav" aria-label="Hauptnavigation">
   <a href="index.html" class="kern-bottom-nav__item">
@@ -341,7 +342,7 @@
 </nav>
 
 
-<!-- App Drawer -->
+<!-- ── App Drawer (Slide-in Menü) ── -->
 <div class="kern-drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
 <div class="kern-drawer" id="appDrawer" aria-hidden="true">
   <div class="kern-drawer__head">

@@ -1,10 +1,69 @@
 /* KERN UX v2.6.4 – CIB / CIB Theme */
 /* KERN-Struktur + CIB Editorial-Aesthetik */
 
+/* ══════════════════════════════════════════════════════
+   INHALTSVERZEICHNIS
+   1.  Import & Lucide-Hilfklasse
+   2.  Custom Properties (Design Tokens)
+   3.  Reset & Base
+   4.  Skip Link (Barrierefreiheit)
+   5.  Kopfzeile (Header / Navigation)
+   6.  Breadcrumb
+   7.  Layout (Container, Page, Grid)
+   8.  Hero (CIB Editorial)
+   9.  Buttons
+   10. Badges
+   11. Alerts
+   12. Cards (Generic, Feature, Artist, Event)
+   13. Section Header & Typografie-Helfer
+   14. Tabs
+   15. Search
+   16. Stats Strip
+   17. Profile Header
+   18. Progress (Wizard)
+   19. Form Elements
+   20. Summary / DL
+   21. Accordion
+   22. Wizard (Panel)
+   23. Callout / Info Box
+   24. Artwork Grid
+   25. Footer & Utilities
+   26. Mobile Responsive (≤ 700px)
+   ──────────────────────────────────────────────────────
+   EXPERIMENT v2 — Native App Look
+   (Branch: experiment/mobile-app-redesign)
+   27. App-Design Tokens (Root-Erweiterungen)
+   28. App Layout (Three-Column)
+   29. Sidebar (Desktop)
+   30. Sidebar Components (Space, Nav, Back-Link)
+   31. Kopfzeile-Overrides (App-Modus)
+   32. Section Label & Page Title
+   33. Cell Group (iOS-style Listen)
+   34. Horizontal Scroll Strip & Avatar Chip
+   35. Compact Event Cell
+   36. Bottom Navigation
+   37. Stat Pills
+   38. Mobile-only Sichtbarkeit
+   39. Desktop-Overrides (≥ 900px)
+   40. Event Carousel
+   41. Event Cell Thumbnail
+   42. Platform Bar
+   43. Share Pill
+   44. App Drawer
+   45. Maskottchen-Platzierungen
+   46. Sidebar Contest
+   ══════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════
+   1. IMPORT & LUCIDE-HILFSKLASSE
+   ══════════════════════════════════════════════════════ */
 .lucide { vertical-align: -0.2em; flex-shrink: 0; }
 
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap');
 
+/* ══════════════════════════════════════════════════════
+   2. CUSTOM PROPERTIES (DESIGN TOKENS)
+   ══════════════════════════════════════════════════════ */
 :root {
   /* ── CIB Design System (aus CIB_DesignComponents.svg) ── */
 
@@ -91,7 +150,9 @@
   --max-w: 1200px;
 }
 
-/* ── Reset ── */
+/* ══════════════════════════════════════════════════════
+   3. RESET & BASE
+   ══════════════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
 body {
@@ -108,7 +169,9 @@ a:hover { color: var(--cib-purple-dark); }
 ul, ol { padding-left: var(--s5); }
 strong { font-weight: 700; }
 
-/* ── Skip Link ── */
+/* ══════════════════════════════════════════════════════
+   4. SKIP LINK (Barrierefreiheit)
+   ══════════════════════════════════════════════════════ */
 .skip-link {
   position: absolute; top: -9999px; left: var(--s4);
   background: var(--cib-yellow); color: var(--cib-ink);
@@ -117,9 +180,9 @@ strong { font-weight: 700; }
 }
 .skip-link:focus { top: var(--s2); }
 
-/* ═══════════════════════════════════════
-   KERN KOPFZEILE
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   5. KOPFZEILE (Header / Navigation)
+   ══════════════════════════════════════════════════════ */
 .kern-kopfzeile {
   background: var(--cib-ink);
   border-bottom: 3px solid var(--cib-yellow);
@@ -178,7 +241,9 @@ strong { font-weight: 700; }
   padding: 2px 8px; border-radius: 99px; letter-spacing: 0.04em;
 }
 
-/* ── Breadcrumb ── */
+/* ══════════════════════════════════════════════════════
+   6. BREADCRUMB
+   ══════════════════════════════════════════════════════ */
 .kern-breadcrumb {
   background: var(--color-surface); border-bottom: 1px solid var(--color-border);
   padding: var(--s2) 0; font-size: var(--text-sm);
@@ -191,17 +256,30 @@ strong { font-weight: 700; }
 .kern-breadcrumb__inner a:hover { text-decoration: underline; }
 .kern-breadcrumb__sep { color: var(--color-border-dark); }
 
-/* ═══════════════════════════════════════
-   LAYOUT
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   7. LAYOUT (Container, Page, Grid)
+   ══════════════════════════════════════════════════════ */
 .kern-container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--s5); }
 .kern-page  { padding: var(--s6) 0 var(--s8); }
 .kern-section { margin-bottom: var(--s7); }
 .kern-section--sm { margin-bottom: var(--s6); }
 
-/* ═══════════════════════════════════════
-   CIB HERO (Editorial, bold)
-═══════════════════════════════════════ */
+.kern-grid { display: grid; gap: var(--s5); }
+.kern-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.kern-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.kern-grid--sidebar { grid-template-columns: 300px 1fr; gap: var(--s7); }
+.kern-grid--events  { grid-template-columns: 1fr; gap: var(--s3); }
+@media (max-width: 960px) {
+  .kern-grid--3       { grid-template-columns: repeat(2, 1fr); }
+  .kern-grid--sidebar { grid-template-columns: 1fr; }
+}
+@media (max-width: 580px) {
+  .kern-grid--3, .kern-grid--2 { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════
+   8. HERO (CIB Editorial, bold)
+   ══════════════════════════════════════════════════════ */
 .kern-hero {
   background: var(--cib-ink);
   position: relative; overflow: hidden;
@@ -214,7 +292,7 @@ strong { font-weight: 700; }
     radial-gradient(ellipse 40% 60% at 10% 80%, rgba(252,187,12,0.12) 0%, transparent 60%),
     radial-gradient(ellipse 30% 40% at 50% 100%, rgba(21,164,174,0.08) 0%, transparent 60%);
 }
-/* Speech-bubble decorative element */
+/* Dekoratives Sprechblasen-Element */
 .kern-hero__bubble {
   position: absolute; right: -60px; bottom: -40px;
   width: 340px; height: 200px; opacity: 0.06;
@@ -254,7 +332,7 @@ strong { font-weight: 700; }
 }
 .kern-hero__image img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Logged-in member strip */
+/* Eingeloggter Mitglieds-Streifen im Hero */
 .kern-member-strip {
   background: rgba(97,65,135,0.18);
   border-top: 1px solid rgba(97,65,135,0.3);
@@ -288,9 +366,9 @@ strong { font-weight: 700; }
   .kern-hero__title { font-size: var(--text-3xl); }
 }
 
-/* ═══════════════════════════════════════
-   BUTTONS
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   9. BUTTONS
+   ══════════════════════════════════════════════════════ */
 .kern-btn {
   display: inline-flex; align-items: center; gap: var(--s2);
   padding: 10px var(--s5); font-family: var(--font);
@@ -327,9 +405,9 @@ strong { font-weight: 700; }
 .kern-btn--full { width: 100%; justify-content: center; }
 .kern-btn--danger { background: var(--cib-red); color: #fff; border-color: var(--cib-red); }
 
-/* ═══════════════════════════════════════
-   BADGES
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   10. BADGES
+   ══════════════════════════════════════════════════════ */
 .kern-badge {
   display: inline-flex; align-items: center;
   font-size: var(--text-xs); font-weight: 700;
@@ -350,9 +428,9 @@ strong { font-weight: 700; }
 .kern-badge--dark     { background: var(--cib-ink); color: #fff; }
 .kern-badge--outline  { background: transparent; color: var(--color-text-muted); border: 1px solid var(--color-border); }
 
-/* ═══════════════════════════════════════
-   ALERT
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   11. ALERTS
+   ══════════════════════════════════════════════════════ */
 .kern-alert {
   display: flex; gap: var(--s3);
   padding: var(--s4) var(--s5);
@@ -366,9 +444,9 @@ strong { font-weight: 700; }
 .kern-alert__icon    { font-size: var(--text-lg); flex-shrink: 0; margin-top: 1px; }
 .kern-alert__title   { font-weight: 700; margin-bottom: 2px; }
 
-/* ═══════════════════════════════════════
-   CARDS
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   12. CARDS (Generic, Feature, Artist, Event)
+   ══════════════════════════════════════════════════════ */
 .kern-card {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -443,25 +521,9 @@ strong { font-weight: 700; }
 .kern-card--event .kern-card__meta span::before { content: ''; }
 .kern-card--event:hover { transform: translateX(4px) translateY(-1px); }
 
-/* ═══════════════════════════════════════
-   GRID
-═══════════════════════════════════════ */
-.kern-grid { display: grid; gap: var(--s5); }
-.kern-grid--3 { grid-template-columns: repeat(3, 1fr); }
-.kern-grid--2 { grid-template-columns: repeat(2, 1fr); }
-.kern-grid--sidebar { grid-template-columns: 300px 1fr; gap: var(--s7); }
-.kern-grid--events  { grid-template-columns: 1fr; gap: var(--s3); }
-@media (max-width: 960px) {
-  .kern-grid--3       { grid-template-columns: repeat(2, 1fr); }
-  .kern-grid--sidebar { grid-template-columns: 1fr; }
-}
-@media (max-width: 580px) {
-  .kern-grid--3, .kern-grid--2 { grid-template-columns: 1fr; }
-}
-
-/* ═══════════════════════════════════════
-   SECTION HEADER (Editorial)
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   13. SECTION HEADER & TYPOGRAFIE-HELFER
+   ══════════════════════════════════════════════════════ */
 .kern-section-header {
   display: flex; align-items: flex-end; justify-content: space-between;
   margin-bottom: var(--s5); gap: var(--s4); flex-wrap: wrap;
@@ -478,9 +540,9 @@ strong { font-weight: 700; }
 .kern-body { font-size: var(--text-base); line-height: 1.7; color: var(--color-text-muted); }
 .kern-body--lg { font-size: var(--text-lg); }
 
-/* ═══════════════════════════════════════
-   TABS
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   14. TABS
+   ══════════════════════════════════════════════════════ */
 .kern-tabs { margin-bottom: var(--s5); }
 .kern-tabs__list {
   display: flex; border-bottom: 2px solid var(--color-border);
@@ -498,9 +560,9 @@ strong { font-weight: 700; }
   color: var(--cib-purple); border-bottom-color: var(--cib-yellow);
 }
 
-/* ═══════════════════════════════════════
-   SEARCH
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   15. SEARCH
+   ══════════════════════════════════════════════════════ */
 .kern-search {
   display: flex; align-items: center;
   border: 2px solid var(--color-border); border-radius: var(--r-md);
@@ -520,9 +582,9 @@ strong { font-weight: 700; }
 }
 .kern-search__btn:hover { background: var(--cib-yellow-hover); }
 
-/* ═══════════════════════════════════════
-   STATS STRIP
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   16. STATS STRIP
+   ══════════════════════════════════════════════════════ */
 .kern-stats {
   display: grid; grid-template-columns: repeat(4, 1fr);
   background: var(--cib-ink); color: #fff;
@@ -537,9 +599,9 @@ strong { font-weight: 700; }
 .kern-stat__label { font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; margin-top: 4px; }
 @media (max-width: 580px) { .kern-stats { grid-template-columns: repeat(2, 1fr); } }
 
-/* ═══════════════════════════════════════
-   PROFILE HEADER (Artist / User)
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   17. PROFILE HEADER (Artist / User)
+   ══════════════════════════════════════════════════════ */
 .kern-profile-header {
   background: var(--cib-ink); color: #fff;
   padding: var(--s7) 0 0;
@@ -591,9 +653,9 @@ strong { font-weight: 700; }
   .kern-profile-header__name { font-size: var(--text-2xl); }
 }
 
-/* ═══════════════════════════════════════
-   PROGRESS (Wizard)
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   18. PROGRESS (Wizard)
+   ══════════════════════════════════════════════════════ */
 .kern-progress { display: flex; align-items: center; margin-bottom: var(--s6); }
 .kern-progress__step { display: flex; align-items: center; flex: 1; }
 .kern-progress__dot {
@@ -611,9 +673,9 @@ strong { font-weight: 700; }
 .kern-progress__line { flex: 1; height: 2px; background: var(--color-border); margin: 0 var(--s2); }
 .kern-progress__step--done .kern-progress__line { background: var(--cib-yellow); }
 
-/* ═══════════════════════════════════════
-   FORM ELEMENTS
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   19. FORM ELEMENTS
+   ══════════════════════════════════════════════════════ */
 .kern-fieldset { border: none; padding: 0; margin-bottom: var(--s5); }
 .kern-fieldset__legend {
   font-size: var(--text-lg); font-weight: 800; margin-bottom: var(--s4);
@@ -651,9 +713,9 @@ strong { font-weight: 700; }
 .kern-radio__label, .kern-checkbox__label { display: flex; flex-direction: column; gap: 2px; }
 .kern-radio__sublabel, .kern-checkbox__sublabel { font-size: var(--text-xs); color: var(--color-text-muted); }
 
-/* ═══════════════════════════════════════
-   SUMMARY
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   20. SUMMARY / DL
+   ══════════════════════════════════════════════════════ */
 .kern-summary { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--r-lg); overflow: hidden; }
 .kern-summary__section { padding: var(--s4) var(--s5); border-bottom: 1px solid var(--color-border); }
 .kern-summary__section:last-child { border-bottom: none; }
@@ -663,9 +725,9 @@ strong { font-weight: 700; }
 .kern-dl dt { font-weight: 700; color: var(--color-text-muted); }
 .kern-dl dd { color: var(--color-text); }
 
-/* ═══════════════════════════════════════
-   ACCORDION
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   21. ACCORDION
+   ══════════════════════════════════════════════════════ */
 .kern-accordion { border: 1px solid var(--color-border); border-radius: var(--r-lg); overflow: hidden; }
 .kern-accordion__item { border-bottom: 1px solid var(--color-border); }
 .kern-accordion__item:last-child { border-bottom: none; }
@@ -683,15 +745,15 @@ strong { font-weight: 700; }
 .kern-accordion__content { padding: 0 var(--s5) var(--s4); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; display: none; }
 .kern-accordion__content.open { display: block; }
 
-/* ═══════════════════════════════════════
-   WIZARD
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   22. WIZARD (Panel)
+   ══════════════════════════════════════════════════════ */
 .wizard-panel { display: none; }
 .wizard-panel.active { display: block; }
 
-/* ═══════════════════════════════════════
-   CALLOUT / INFO BOX
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   23. CALLOUT / INFO BOX
+   ══════════════════════════════════════════════════════ */
 .kern-callout {
   background: var(--color-surface); border: 1px solid var(--color-border);
   border-left: 4px solid var(--cib-yellow);
@@ -700,9 +762,9 @@ strong { font-weight: 700; }
 .kern-callout--accent { border-left-color: var(--cib-purple); background: var(--cib-purple-light); }
 .kern-callout--dark { background: var(--cib-ink); color: #fff; border-color: var(--cib-ink); border-left-color: var(--cib-yellow); }
 
-/* ═══════════════════════════════════════
-   ARTWORK GRID
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   24. ARTWORK GRID
+   ══════════════════════════════════════════════════════ */
 .kern-artwork-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s3); }
 .kern-artwork-item {
   aspect-ratio: 16/9; border-radius: var(--r-md); overflow: hidden;
@@ -720,9 +782,9 @@ strong { font-weight: 700; }
 }
 @media (max-width: 640px) { .kern-artwork-grid { grid-template-columns: 1fr; } }
 
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   25. FOOTER & UTILITIES
+   ══════════════════════════════════════════════════════ */
 .kern-footer {
   background: var(--cib-ink); color: rgba(255,255,255,0.45);
   padding: var(--s6) 0; border-top: 3px solid var(--cib-yellow);
@@ -736,9 +798,7 @@ strong { font-weight: 700; }
 .kern-footer__links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: var(--text-sm); }
 .kern-footer__links a:hover { color: var(--cib-yellow); }
 
-/* ═══════════════════════════════════════
-   UTILITIES
-═══════════════════════════════════════ */
+/* Utility Classes */
 .u-flex         { display: flex; }
 .u-flex-center  { display: flex; align-items: center; }
 .u-flex-between { display: flex; align-items: center; justify-content: space-between; }
@@ -761,9 +821,9 @@ strong { font-weight: 700; }
 .u-box         { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: var(--s5); }
 .u-box--dark   { background: var(--cib-ink); color: #fff; border-color: var(--cib-ink); }
 
-/* ═══════════════════════════════════════
-   MOBILE RESPONSIVE (≤ 700px)
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   26. MOBILE RESPONSIVE (≤ 700px)
+   ══════════════════════════════════════════════════════ */
 @media (max-width: 700px) {
 
   /* ── Header: Nav auf eigene Zeile ── */
@@ -839,11 +899,15 @@ strong { font-weight: 700; }
   .kern-dl dt { margin-top: var(--s2); color: var(--color-text-xmuted); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; }
 }
 
-/* ═══════════════════════════════════════
+
+/* ══════════════════════════════════════════════════════
    EXPERIMENT v2 — NATIVE APP LOOK
    Branch: experiment/mobile-app-redesign
-═══════════════════════════════════════ */
+   ══════════════════════════════════════════════════════ */
 
+/* ══════════════════════════════════════════════════════
+   27. APP-DESIGN TOKENS (Root-Erweiterungen)
+   ══════════════════════════════════════════════════════ */
 :root {
   --r-card:          16px;
   --r-pill:          999px;
@@ -867,17 +931,19 @@ body { background: #faf8f5; }
 .kern-cell { border-bottom-color: var(--color-warm-mist); }
 .kern-event-cell { border-bottom-color: var(--color-warm-mist); }
 
-/* ── Three-column layout system (mobile-first) ── */
+/* ══════════════════════════════════════════════════════
+   28. APP LAYOUT (Three-Column, mobile-first)
+   ══════════════════════════════════════════════════════ */
 .kern-app-layout { display: block; }
 .kern-sidebar    { display: none; }
 .kern-side-panel { display: none; }
 
-/* kern-main-col: mobile = full width with bottom-nav padding */
+/* Mobile: volle Breite + Padding für Bottom-Nav */
 .kern-main-col {
   padding: var(--s4) var(--s5) calc(var(--app-tab-h) + var(--s4));
 }
 
-/* 900px: sidebar + main */
+/* 900px: Sidebar + Main */
 @media (min-width: 900px) {
   body { padding-bottom: 0; }
   .kern-bottom-nav { display: none; }
@@ -910,7 +976,7 @@ body { background: #faf8f5; }
   }
 }
 
-/* 1200px: three columns */
+/* 1200px: Drei Spalten */
 @media (min-width: 1200px) {
   .kern-app-layout {
     grid-template-columns: 220px 1fr 280px;
@@ -930,7 +996,22 @@ body { background: #faf8f5; }
   .kern-side-panel::-webkit-scrollbar { display: none; }
 }
 
-/* ── Sidebar components ── */
+/* ══════════════════════════════════════════════════════
+   29. SIDEBAR (Desktop, ≥ 900px)
+   ══════════════════════════════════════════════════════ */
+
+/* Sidebar section-label: kleiner, kein gelber Balken */
+.kern-sidebar .kern-section-label {
+  font-size: 10px;
+  padding: var(--s3) var(--s2) var(--s1);
+  border-left: none;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ══════════════════════════════════════════════════════
+   30. SIDEBAR COMPONENTS (Space, Nav, Back-Link)
+   ══════════════════════════════════════════════════════ */
 .kern-sidebar-space {
   background: var(--cib-ink);
   border-radius: var(--r-card);
@@ -961,25 +1042,30 @@ body { background: #faf8f5; }
   background: var(--cib-yellow); color: var(--cib-ink);
 }
 
-/* Sidebar section-label: smaller, no yellow border */
-.kern-sidebar .kern-section-label {
-  font-size: 10px;
-  padding: var(--s3) var(--s2) var(--s1);
-  border-left: none;
-  color: var(--color-text-muted);
-  letter-spacing: 0.1em;
+/* Back-Link zu Maniacgeek */
+.kern-sidebar-back {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; color: var(--color-text-muted);
+  text-decoration: none; padding: 6px var(--s2); margin-bottom: var(--s2);
+  border-radius: 8px; transition: background 0.1s;
+  letter-spacing: 0.02em;
 }
+.kern-sidebar-back:hover { background: var(--color-surface); color: var(--color-text); }
 
-/* ── Override: Pill buttons ── */
+/* ══════════════════════════════════════════════════════
+   31. KOPFZEILE-OVERRIDES (App-Modus)
+   ══════════════════════════════════════════════════════ */
+
+/* Override: Pill Buttons */
 .kern-btn { border-radius: var(--r-pill); }
 
-/* ── Override: More rounded cards ── */
+/* Override: Mehr gerundete Cards */
 .kern-card { border-radius: var(--r-card); }
 
-/* ── Override: Pill badges ── */
+/* Override: Pill Badges */
 .kern-badge { border-radius: var(--r-pill); padding: 3px 9px; }
 
-/* ── Override: Slimmer blurred header ── */
+/* Override: Schlanke, geblurrte Kopfzeile */
 .kern-kopfzeile {
   background: rgba(18, 16, 11, 0.88);
   backdrop-filter: blur(24px) saturate(1.4);
@@ -989,13 +1075,29 @@ body { background: #faf8f5; }
 }
 .kern-kopfzeile__inner { height: var(--app-header-h); }
 
-/* ── Override: hide breadcrumb ── */
+/* Logo-Button (öffnet Drawer auf Mobile) */
+.kern-kopfzeile__logo-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: none; border: none; cursor: pointer;
+  color: #f7f0e6; font: inherit; font-weight: 900; padding: 0; text-decoration: none;
+}
+
+/* Override: Breadcrumb ausblenden */
 .kern-breadcrumb { display: none; }
 
-/* ── Body padding for bottom nav ── */
+/* Body-Padding für Bottom-Nav */
 body { padding-bottom: calc(var(--app-tab-h) + 8px); }
 
-/* ── Section Label (replaces H2) ── */
+/* Header-Nav: auf Mobile versteckt (Bottom-Nav übernimmt), ab 900px sichtbar */
+@media (max-width: 899px) {
+  .kern-kopfzeile__nav { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════
+   32. SECTION LABEL & PAGE TITLE
+   ══════════════════════════════════════════════════════ */
+
+/* Section Label (ersetzt H2) */
 .kern-section-label {
   display: flex; align-items: center; justify-content: space-between;
   font-size: 11px; font-weight: 700;
@@ -1009,7 +1111,7 @@ body { padding-bottom: calc(var(--app-tab-h) + 8px); }
   text-decoration: none; text-transform: none; letter-spacing: 0;
 }
 
-/* ── Page Title (replaces H1) ── */
+/* Page Title (ersetzt H1) */
 .kern-page-title {
   font-size: 26px; font-weight: 800;
   line-height: 1.1; color: var(--color-text);
@@ -1024,7 +1126,9 @@ body { padding-bottom: calc(var(--app-tab-h) + 8px); }
   display: block;
 }
 
-/* ── Cell Group (iOS-style grouped list) ── */
+/* ══════════════════════════════════════════════════════
+   33. CELL GROUP (iOS-style Gruppen-Liste)
+   ══════════════════════════════════════════════════════ */
 .kern-cell-group {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -1070,7 +1174,9 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-cell__avatar  { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--color-border); }
 .kern-cell__avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ── Horizontal Scroll Strip ── */
+/* ══════════════════════════════════════════════════════
+   34. HORIZONTAL SCROLL STRIP & AVATAR CHIP
+   ══════════════════════════════════════════════════════ */
 .kern-scroll-x {
   display: flex; gap: var(--s3);
   overflow-x: auto; -webkit-overflow-scrolling: touch;
@@ -1080,7 +1186,6 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 }
 .kern-scroll-x::-webkit-scrollbar { display: none; }
 
-/* ── Avatar Chip (for horizontal scroll) ── */
 .kern-avatar-chip {
   display: flex; flex-direction: column; align-items: center;
   gap: 5px; text-decoration: none; color: inherit;
@@ -1099,7 +1204,9 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
   -webkit-line-clamp: 2; -webkit-box-orient: vertical;
 }
 
-/* ── Compact Event Cell ── */
+/* ══════════════════════════════════════════════════════
+   35. COMPACT EVENT CELL
+   ══════════════════════════════════════════════════════ */
 .kern-event-cell {
   display: flex; align-items: center;
   padding: 10px var(--s4); gap: var(--s3);
@@ -1121,9 +1228,28 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-event-cell__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .kern-event-cell__title { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--color-text); }
 .kern-event-cell__meta  { font-size: 12px; color: var(--color-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.kern-event-cell__right { margin-left: auto; flex-shrink: 0; padding-left: var(--s2); }
 
-/* ── Bottom Navigation ── */
+/*
+ * .kern-event-cell__right:
+ * Enthält Thumbnail + Badge nebeneinander als flex-column.
+ * Diese Regeln wurden ursprünglich mit !important eingefügt um
+ * einen Browser-Cache-Bug zu umgehen, bei dem die alte Definition
+ * (margin-left: auto; font-size: 13px) nicht überschrieben wurde.
+ * Der Workaround ist noch nötig, weil .kern-cell__right ohne !important
+ * höhere Spezifizität hätte (beide haben gleiche Spezifizität, aber
+ * .kern-cell__right wird später im Reset definiert).
+ * TODO: Langfristig BEM-Trennung: .kern-event-cell__right eigene Klasse
+ * ohne Vererbung von .kern-cell__right.
+ */
+.kern-event-cell__right {
+  display: flex !important; flex-direction: column !important;
+  align-items: flex-end !important; gap: 5px !important;
+  flex-shrink: 0 !important; margin-left: auto !important; padding-left: var(--s2) !important;
+}
+
+/* ══════════════════════════════════════════════════════
+   36. BOTTOM NAVIGATION
+   ══════════════════════════════════════════════════════ */
 .kern-bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0;
   height: var(--app-tab-h);
@@ -1145,7 +1271,9 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-bottom-nav__item:hover { color: rgba(255,255,255,0.7); }
 .kern-bottom-nav__item.active { color: var(--cib-yellow); }
 
-/* ── Stat pill row ── */
+/* ══════════════════════════════════════════════════════
+   37. STAT PILLS
+   ══════════════════════════════════════════════════════ */
 .kern-stat-pills {
   display: flex; gap: var(--s2); flex-wrap: wrap;
   margin-bottom: var(--s4);
@@ -1162,19 +1290,26 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-stat-pill:nth-child(4) { background: var(--cib-purple); color: #fff; }
 .kern-stat-pill span { font-weight: 900; margin-right: 4px; }
 
-/* mobile-only blocks: visible < 900px, hidden when sidebar takes over */
+/* ══════════════════════════════════════════════════════
+   38. MOBILE-ONLY SICHTBARKEIT
+   ══════════════════════════════════════════════════════ */
+/* Blöcke die nur auf Mobile erscheinen (< 900px, wenn Sidebar nicht aktiv ist) */
 .sidebar-mobile-only { display: block; }
 @media (min-width: 900px) {
   .sidebar-mobile-only { display: none; }
 }
 
-/* ── 900px overrides (must come after main component definitions) ── */
+/* ══════════════════════════════════════════════════════
+   39. DESKTOP-OVERRIDES (≥ 900px)
+   ══════════════════════════════════════════════════════ */
 @media (min-width: 900px) {
-  /* Hide bottom nav, use sidebar instead */
+  /* Bottom-Nav ausblenden – Sidebar übernimmt Navigation */
+  /* !important nötig weil body padding-bottom gesetzt und Bottom-Nav
+     als fixed element beide unabhängig von einander existieren */
   .kern-bottom-nav { display: none !important; }
   body { padding-bottom: 0 !important; }
 
-  /* Sidebar cells: no truncation, no badge, compact */
+  /* Sidebar-Cells: kein Truncation, kein Badge, kompakter */
   .kern-sidebar .kern-cell__title {
     white-space: normal; font-size: 13px; word-break: break-word; hyphens: none;
   }
@@ -1184,34 +1319,9 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
   .kern-sidebar .kern-cell__icon { width: 30px; height: 30px; border-radius: 7px; }
 }
 
-/* Header nav: hidden on mobile (bottom nav handles it), visible 900px+ */
-@media (max-width: 899px) {
-  .kern-kopfzeile__nav { display: none; }
-}
-
-/* ── Maniacgeek back link ── */
-.kern-sidebar-back {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 11px; font-weight: 600; color: var(--color-text-muted);
-  text-decoration: none; padding: 6px var(--s2); margin-bottom: var(--s2);
-  border-radius: 8px; transition: background 0.1s;
-  letter-spacing: 0.02em;
-}
-.kern-sidebar-back:hover { background: var(--color-surface); color: var(--color-text); }
-
-/* ── Follow / Message bar ── */
-.kern-follow-bar {
-  display: flex; gap: var(--s2); margin-bottom: var(--s4);
-}
-.kern-follow-bar .kern-btn { flex: 1; justify-content: center; }
-
-/* ── Share button (inline) ── */
-.kern-share-row {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: var(--s3);
-}
-
-/* ── Event detail hero carousel ── */
+/* ══════════════════════════════════════════════════════
+   40. EVENT CAROUSEL (Event-Detail Seite)
+   ══════════════════════════════════════════════════════ */
 .ev-carousel {
   position: relative; border-radius: var(--r-card); overflow: hidden;
   margin-bottom: var(--s4); aspect-ratio: 16/7; background: var(--color-surface);
@@ -1242,12 +1352,15 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 }
 .ev-carousel__dot.active { background: #fff; }
 
-/* ── Event cell thumbnail ── */
-.kern-event-cell__right {
-  display: flex !important; flex-direction: column !important;
-  align-items: flex-end !important; gap: 5px !important;
-  flex-shrink: 0 !important; margin-left: auto !important; padding-left: var(--s2) !important;
-}
+/* ══════════════════════════════════════════════════════
+   41. EVENT CELL THUMBNAIL
+   ══════════════════════════════════════════════════════ */
+/*
+ * .kern-event-cell__thumb:
+ * Thumbnail-Bild rechts in Event-Zellen (Events-Seite, Index).
+ * !important-Regeln sind ein Browser-Cache-Workaround – siehe
+ * Kommentar bei .kern-event-cell__right (Sektion 35).
+ */
 .kern-event-cell__thumb {
   width: 56px !important; height: 56px !important;
   max-width: 56px !important; max-height: 56px !important;
@@ -1256,7 +1369,9 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
   box-shadow: var(--shadow-subtle);
 }
 
-/* ── Platform bar (Maniacgeek parent context) ── */
+/* ══════════════════════════════════════════════════════
+   42. PLATFORM BAR (Maniacgeek-Kontext oben)
+   ══════════════════════════════════════════════════════ */
 .kern-platform-bar {
   display: flex; align-items: center; gap: 8px;
   background: var(--cib-ink); color: rgba(255,255,255,0.6);
@@ -1272,7 +1387,9 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-platform-bar__sep { opacity: 0.4; }
 .kern-platform-bar__space { color: rgba(255,255,255,0.75); }
 
-/* ── Painted door: share pill ── */
+/* ══════════════════════════════════════════════════════
+   43. SHARE PILL (Painted door – Teilen-Button)
+   ══════════════════════════════════════════════════════ */
 .kern-share-pill {
   display: inline-flex; align-items: center; gap: 5px;
   background: var(--color-soft-paper); border: 1px solid var(--color-warm-mist);
@@ -1282,7 +1399,9 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 }
 .kern-share-pill:hover { background: #fff; }
 
-/* ── App Drawer (Slack-style) ── */
+/* ══════════════════════════════════════════════════════
+   44. APP DRAWER (Slack-style Slide-in Menü)
+   ══════════════════════════════════════════════════════ */
 .kern-drawer-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.45);
   z-index: 200; opacity: 0; pointer-events: none;
@@ -1345,14 +1464,36 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-drawer__user-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); }
 .kern-drawer__user-role { font-size: 11px; color: rgba(255,255,255,0.35); }
 
-/* Logo becomes a tap target */
-.kern-kopfzeile__logo-btn {
-  display: flex; align-items: center; gap: 8px;
-  background: none; border: none; cursor: pointer;
-  color: #f7f0e6; font: inherit; font-weight: 900; padding: 0; text-decoration: none;
+/* Follow / Message Bar */
+.kern-follow-bar {
+  display: flex; gap: var(--s2); margin-bottom: var(--s4);
+}
+.kern-follow-bar .kern-btn { flex: 1; justify-content: center; }
+
+/* Share Row (Back + Teilen nebeneinander) */
+.kern-share-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: var(--s3);
 }
 
-/* ── Maskottchen-Platzierungen ── */
+/* ══════════════════════════════════════════════════════
+   45. MASKOTTCHEN-PLATZIERUNGEN
+   ══════════════════════════════════════════════════════ */
+
+/*
+ * .kern-mascot-home:
+ * Dekoratives Maskottchen auf der Startseite (index.html).
+ * position: fixed, weil es am unteren Rand des Viewports hängen soll,
+ * unabhängig von der Scroll-Position des Inhalts.
+ * z-index: 0 damit es hinter allen Inhalten liegt.
+ */
+.kern-mascot-home {
+  position: fixed; right: 0; bottom: 72px;
+  height: 100px; opacity: 0.13;
+  pointer-events: none; z-index: 0;
+}
+
+/* Footer-Maskottchen (zwei Figuren, rechts ausgerichtet) */
 .kern-mascot-footer {
   display: flex; justify-content: flex-end; align-items: flex-end;
   padding: 0 20px; height: 72px; overflow: hidden; pointer-events: none;
@@ -1360,6 +1501,7 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-mascot-footer img { height: 68px; opacity: 0.32; display: block; }
 .kern-mascot-footer img:first-child { height: 52px; opacity: 0.15; margin-right: -6px; transform: scaleX(-1); }
 
+/* Empty-State Maskottchen (z.B. leere Suchergebnisse) */
 .kern-mascot-empty {
   display: flex; flex-direction: column; align-items: center;
   padding: var(--s6) var(--s4) var(--s4); text-align: center;
@@ -1367,6 +1509,7 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-mascot-empty img { height: 130px; margin-bottom: var(--s3); }
 .kern-mascot-empty__label { font-size: 13px; color: var(--color-text-muted); line-height: 1.5; }
 
+/* Header-Maskottchen (neben Seitentitel, z.B. Anmelden-Seite) */
 .kern-mascot-header {
   display: flex; align-items: flex-end; gap: var(--s4);
   margin-bottom: var(--s4);
@@ -1374,7 +1517,9 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-mascot-header__text { flex: 1; }
 .kern-mascot-header img { height: 100px; flex-shrink: 0; display: block; }
 
-/* ── Sidebar Contest ── */
+/* ══════════════════════════════════════════════════════
+   46. SIDEBAR CONTEST (Contest 2027 Widget)
+   ══════════════════════════════════════════════════════ */
 .kern-sidebar-contest {
   padding: 0 var(--s2) var(--s3);
 }

@@ -10,6 +10,7 @@
 
 <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
+<!-- ── Platform Bar (Maniacgeek-Kontext) ── -->
 <div class="kern-platform-bar">
   <a href="#" class="kern-platform-bar__link" onclick="return false;">
     <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -18,6 +19,7 @@
   <span class="kern-platform-bar__sep">·</span>
   <span class="kern-platform-bar__space">Comic Invasion Berlin 2027</span>
 </div>
+<!-- ── Kopfzeile (Header + Drawer-Trigger) ── -->
 <header class="kern-kopfzeile" role="banner">
   <div class="kern-kopfzeile__inner">
     <button class="kern-kopfzeile__logo-btn" onclick="openDrawer()" aria-label="Menü öffnen">
@@ -40,8 +42,9 @@
   </div>
 </header>
 
-<main id="main-content" style="position:relative;">
-<img src="../Design Components/Mascot SVG/CIB24 Lavender Main-Koons.svg" alt="" aria-hidden="true" style="position:fixed;right:0;bottom:72px;height:100px;opacity:0.13;pointer-events:none;z-index:0;">
+<main id="main-content">
+<!-- ── Dekoratives Maskottchen (fixed, hinter Inhalt) ── -->
+<img src="../Design Components/Mascot SVG/CIB24 Lavender Main-Koons.svg" alt="" aria-hidden="true" class="kern-mascot-home">
 <div class="kern-app-layout">
 
   <!-- ── SIDEBAR (900px+) ── -->
@@ -161,7 +164,7 @@
       <div class="kern-stat-pill"><span>2</span>Tage</div>
     </div>
 
-    <!-- Mobile-only: Dein Status -->
+    <!-- ── Dein Status (mobile-only, Sidebar zeigt dies ab 900px) ── -->
     <div class="sidebar-mobile-only">
       <div class="kern-section-label" style="padding-top:0;">Dein Status</div>
       <div class="kern-cell-group" style="margin-bottom:var(--s4);">
@@ -197,7 +200,7 @@
       </div>
     </div>
 
-    <!-- Contest (mobile) -->
+    <!-- ── Contest 2027 (beide Breakpoints) ── -->
     <div class="kern-section-label" style="padding-top:0;">Contest 2027</div>
     <div class="kern-sidebar-contest" style="padding-left:0;padding-right:0;">
       <div class="kern-sidebar-contest__theme">
@@ -220,7 +223,7 @@
       </div>
     </div>
 
-    <!-- Artist Alley scroll -->
+    <!-- ── Artist Alley – Horizontal-Scroll Strip ── -->
     <div class="kern-section-label" style="padding-top:0;">Artist Alley <a href="artists.html">Alle 124 →</a></div>
     <div class="kern-scroll-x">
       <a href="artist-portfolio.html" class="kern-avatar-chip kern-avatar-chip--me">
@@ -249,7 +252,7 @@
       </a>
     </div>
 
-    <!-- Programm -->
+    <!-- ── Programm (nach Tag gruppiert) ── -->
     <div class="kern-section-label">Programm <a href="events.html">Alle 38 →</a></div>
 
     <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--color-text-muted);text-transform:uppercase;margin-bottom:var(--s2);">Do · 21. Mai</div>
@@ -375,7 +378,7 @@
 </div><!-- /kern-app-layout -->
 </main>
 
-<!-- Bottom nav (mobile only, hidden 900px+) -->
+<!-- ── Bottom Navigation (mobile, wird ab 900px ausgeblendet) ── -->
 
 <nav class="kern-bottom-nav" aria-label="Hauptnavigation">
   <a href="index.html" class="kern-bottom-nav__item active">
@@ -401,7 +404,7 @@
 </nav>
 
 
-<!-- App Drawer -->
+<!-- ── App Drawer (Slide-in Menü, per Logo-Button geöffnet) ── -->
 <div class="kern-drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
 <div class="kern-drawer" id="appDrawer" aria-hidden="true">
   <div class="kern-drawer__head">

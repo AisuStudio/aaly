@@ -1176,7 +1176,7 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 
   /* Sidebar cells: no truncation, no badge, compact */
   .kern-sidebar .kern-cell__title {
-    white-space: normal; font-size: 13px;
+    white-space: normal; font-size: 13px; word-break: break-word; hyphens: none;
   }
   .kern-sidebar .kern-cell__sub { font-size: 11px; }
   .kern-sidebar .kern-badge { display: none; }

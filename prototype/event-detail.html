@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Webcomics – Von null auf tausend Follower – CIB 2027 – AALY</title>
+  <link rel="stylesheet" href="kern-aaly.css">
+  <script>
+    // Read query params and patch page before render
+    (function() {
+      const p = new URLSearchParams(location.search);
+      if (!p.get('title')) return;
+
+      // Patch <title>
+      document.addEventListener('DOMContentLoaded', function() {
+        const t = p.get('title'), time = p.get('time'), date = p.get('date');
+        const badge = p.get('badge'), bc = p.get('badgeClass'), meta = p.get('meta');
+        const own = p.get('own') === '1';
+
+        // Page title
+        document.title = t + ' – CIB 2027 – AALY';
+
+        // Heading
+        const h = document.querySelector('.kern-page-title');
+        if (h) h.textContent = t;
+
+        // Time in key-facts cell
+        const timeEl = document.querySelector('.ev-time-val');
+        if (timeEl) timeEl.textContent = time;
+
+        // Date in key-facts cell
+        const dateEl = document.querySelector('.ev-date-val');
+        if (dateEl) dateEl.textContent = date;
+
+        // Meta (location/speaker line) in key-facts
+        const metaEl = document.querySelector('.ev-meta-val');
+        if (metaEl) metaEl.textContent = meta;
+
+        // Badge row: clear and re-render
+        const badgeRow = document.querySelector('.ev-badge-row');
+        if (badgeRow) {
+          badgeRow.innerHTML = '';
+          const b = document.createElement('span');
+          b.className = 'kern-badge kern-badge--' + bc;
+          b.textContent = badge;
+          badgeRow.appendChild(b);
+          if (own) {
+            const b2 = document.createElement('span');
+            b2.className = 'kern-badge kern-badge--success';
+            b2.textContent = '✓ Dein Slot';
+            badgeRow.appendChild(b2);
+          }
+        }
+
+        // Own-slot alert visibility
+        const alert = document.querySelector('.ev-own-alert');
+        if (alert) alert.style.display = own ? '' : 'none';
+
+        // Referent row: show/hide "Du!" badge
+        const duBadge = document.querySelector('.ev-du-badge');
+        if (duBadge) duBadge.style.display = own ? '' : 'none';
+      });
+    })();
+  </script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+<div class="kern-platform-bar">
+  <a href="#" class="kern-platform-bar__link" onclick="return false;">
+    <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    Maniacgeek
+  </a>
+  <span class="kern-platform-bar__sep">·</span>
+  <span class="kern-platform-bar__space">Comic Invasion Berlin 2027</span>
+</div>
+<header class="kern-kopfzeile" role="banner">
+  <div class="kern-kopfzeile__inner">
+    <button class="kern-kopfzeile__logo-btn" onclick="openDrawer()" aria-label="Menü öffnen">
+      <div class="kern-kopfzeile__logo-mark">
+        <svg viewBox="87 177 62 72" width="22" height="22" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M134.4,197.1c3.4,7.1,5.9,17.1,5.9,31.1,0,.1,0,.2-.2.3-7.9,4.1-20.8,4.4-24.8,4.6,0,0-.2,0-.2.1-.3.5-1.4,2.7-1.4,5.6,0,2.3.7,4.6,1.1,5.8,0,.3-.2.5-.4.4-4.4-2.5-8.3-6.7-9.1-12.6,0-.1-.1-.2-.3-.3-4.6-.4-9.3-1.2-13.4-3-1.1-.5-1.8-1.7-1.8-2.9.3-13.7,3-23.1,6.6-29.7,0,0,0,0-.1,0-3.5,0-6.4-.4-6.3-5.6,0-6.4,2.9-13.3,6.4-13.3,3.3,0,5.9,4.3,6.3,10,0,.3.3.4.5.2,5.1-4.6,10.1-5.7,11.7-5.9.2,0,.3-.2.3-.3v-2c0-.2.2-.3.4-.3,1.5.3,6.9,2,12.2,7.9.2.2.5.1.5-.2.5-5.3,3.2-9.2,6.3-9.2,3.5,0,6.3,6.9,6.3,13.3s-4.5,5.6-6,5.6c-.2,0-.4.2-.3.4"/>
+        </svg>
+      </div>
+      AALY
+      <span class="kern-kopfzeile__space-name">CIB 2027</span>
+    </button>
+    
+    <div class="kern-kopfzeile__actions">
+      <span class="kern-member-chip"><svg class="lucide" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Mitglied</span>
+      <div class="kern-kopfzeile__user">
+        <div class="kern-kopfzeile__avatar"><img src="../FakeImages/Avatar copy 4.png" alt="Max Schreiber"></div>
+        <span>Max S.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+<div class="kern-app-layout">
+
+  <!-- ── SIDEBAR (900px+) ── -->
+  <aside class="kern-sidebar" aria-label="Space-Navigation">
+    <a href="#" class="kern-sidebar-back" onclick="return false;" aria-label="Zurück zu Maniacgeek">
+      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      Maniacgeek
+    </a>
+    <div class="kern-sidebar-space">
+      <div class="kern-sidebar-space__name">Comic Invasion Berlin 2027</div>
+      <div class="kern-sidebar-space__meta">22.–23. Mai 2027<br>Museum für Kommunikation, Berlin</div>
+    </div>
+    <nav class="kern-sidebar-nav" aria-label="Navigation">
+      <a href="index.html" class="kern-sidebar-nav__item">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="artists.html" class="kern-sidebar-nav__item">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Artist Alley
+      </a>
+      <a href="events.html" class="kern-sidebar-nav__item active">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+        Events
+      </a>
+      <a href="anmelden.html" class="kern-sidebar-nav__item">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+        Anmelden
+      </a>
+      <a href="artist-portfolio.html" class="kern-sidebar-nav__item">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Mein Profil
+      </a>
+    </nav>
+
+    <!-- Weitere Events heute -->
+    <div class="kern-section-label">Weitere Events Fr 22. Mai</div>
+    <div class="kern-cell-group">
+      <a href="event-detail.html" class="kern-event-cell">
+        <span class="kern-event-cell__time">10:00</span>
+        <span class="kern-event-cell__dot" style="background:var(--cib-yellow);"></span>
+        <div class="kern-event-cell__body">
+          <span class="kern-event-cell__title">Artist Alley – Tag 1</span>
+          <span class="kern-event-cell__meta">Haupthalle</span>
+        </div>
+      </a>
+      <a href="event-detail.html" class="kern-event-cell">
+        <span class="kern-event-cell__time">12:00</span>
+        <span class="kern-event-cell__dot" style="background:var(--cib-teal);"></span>
+        <div class="kern-event-cell__body">
+          <span class="kern-event-cell__title">Inking Workshop</span>
+          <span class="kern-event-cell__meta">Raum 2 · Sara Weiss</span>
+        </div>
+      </a>
+      <a href="event-detail.html" class="kern-event-cell" style="background:rgba(252,187,12,.06);">
+        <span class="kern-event-cell__time">18:30</span>
+        <span class="kern-event-cell__dot" style="background:var(--cib-purple);"></span>
+        <div class="kern-event-cell__body">
+          <span class="kern-event-cell__title">Webcomics-Workshop</span>
+          <span class="kern-event-cell__meta">Raum 2 · Du!</span>
+        </div>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ── MAIN CONTENT ── -->
+  <div class="kern-main-col">
+
+    <!-- Back + Share -->
+    <div class="kern-share-row">
+      <a href="events.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.88rem;color:var(--color-text-muted);text-decoration:none;">
+        <svg class="lucide" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Alle Events
+      </a>
+      <a href="#" class="kern-share-pill" onclick="return false;">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+        Teilen
+      </a>
+    </div>
+
+    <!-- Hero Carousel -->
+    <div class="ev-carousel" id="evCarousel">
+      <div class="ev-carousel__track" id="evTrack">
+        <img src="../FakeImages/Art copy.png"  alt="Impression 1" class="ev-carousel__slide">
+        <img src="../FakeImages/Art copy 2.png" alt="Impression 2" class="ev-carousel__slide">
+        <img src="../FakeImages/Art copy 3.png" alt="Impression 3" class="ev-carousel__slide">
+        <img src="../FakeImages/Art.png"        alt="Impression 4" class="ev-carousel__slide">
+      </div>
+      <button class="ev-carousel__btn ev-carousel__btn--prev" onclick="evSlide(-1)" aria-label="Zurück">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="ev-carousel__btn ev-carousel__btn--next" onclick="evSlide(1)" aria-label="Weiter">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="ev-carousel__dots" id="evDots">
+        <span class="ev-carousel__dot active"></span>
+        <span class="ev-carousel__dot"></span>
+        <span class="ev-carousel__dot"></span>
+        <span class="ev-carousel__dot"></span>
+      </div>
+    </div>
+
+    <!-- Event Header -->
+    <div class="ev-badge-row" style="display:flex;flex-wrap:wrap;gap:var(--s2);margin-bottom:var(--s3);">
+      <span class="kern-badge kern-badge--teal">Workshop</span>
+      <span class="kern-badge kern-badge--success">✓ Dein Slot</span>
+    </div>
+
+    <div class="kern-page-title" style="margin-bottom:var(--s3);">Webcomics – Von null auf tausend Follower</div>
+
+    <script>
+      let evIdx = 0;
+      const evSlides = document.querySelectorAll('.ev-carousel__slide');
+      const evDots   = document.querySelectorAll('.ev-carousel__dot');
+      function evSlide(dir) {
+        evIdx = (evIdx + dir + evSlides.length) % evSlides.length;
+        document.getElementById('evTrack').style.transform = 'translateX(-' + (evIdx * 100) + '%)';
+        evDots.forEach((d,i) => d.classList.toggle('active', i === evIdx));
+      }
+    </script>
+
+    <!-- Key facts: Wer Was Wann Wo -->
+    <div class="kern-cell-group" style="margin-bottom:var(--s5);">
+      <div class="kern-cell">
+        <div class="kern-cell__icon kern-cell__icon--teal">
+          <svg class="lucide" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+        </div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__sub">Wann</span>
+          <span class="kern-cell__title ev-date-val">Freitag, 22. Mai 2027</span>
+        </div>
+        <div class="kern-cell__right" style="font-size:1rem;font-weight:800;color:var(--cib-teal);"><span class="ev-time-val">18:30</span></div>
+      </div>
+      <div class="kern-cell">
+        <div class="kern-cell__icon kern-cell__icon--navy">
+          <svg class="lucide" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></svg>
+        </div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__sub">Dauer</span>
+          <span class="kern-cell__title">60 Minuten</span>
+        </div>
+        <div class="kern-cell__right" style="font-size:0.82rem;color:var(--color-text-muted);">bis 19:30</div>
+      </div>
+      <div class="kern-cell">
+        <div class="kern-cell__icon kern-cell__icon--yellow">
+          <svg class="lucide" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__sub">Wo</span>
+          <span class="kern-cell__title ev-meta-val">Raum 2 · 1. Obergeschoss</span>
+        </div>
+        <div class="kern-cell__right" style="font-size:0.82rem;color:var(--color-text-muted);">ca. 40 Plätze</div>
+      </div>
+      <div class="kern-cell">
+        <div class="kern-cell__icon kern-cell__icon--purple">
+          <svg class="lucide" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__sub">Referent:in</span>
+          <span class="kern-cell__title">Max Schreiber</span>
+        </div>
+        <div class="kern-cell__right">
+          <span class="kern-badge kern-badge--brand ev-du-badge" style="font-size:10px;">Du!</span>
+        </div>
+      </div>
+      <div class="kern-cell">
+        <div class="kern-cell__icon" style="background:var(--color-surface);color:var(--color-text-muted);">
+          <svg class="lucide" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/></svg>
+        </div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__sub">Anmeldung</span>
+          <span class="kern-cell__title">Freier Eintritt, keine Voranmeldung</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beschreibung -->
+    <div class="kern-section-label" style="padding-top:0;">Beschreibung</div>
+    <div class="kern-cell-group" style="margin-bottom:var(--s5);">
+      <div style="padding:var(--s4);font-size:0.92rem;line-height:1.7;color:var(--color-text);">
+        <p style="margin-bottom:var(--s3);">Von der ersten leeren Seite bis zu einer wachsenden Community: In diesem Workshop teilt Max Schreiber seinen Weg mit dem Webcomic <em>„Stadtlichter"</em> – von den Anfängen mit 0 Follower bis heute.</p>
+        <p style="margin-bottom:var(--s3);">Im Fokus stehen nicht nur Tools und Plattformen, sondern vor allem die Fragen: Was macht eine regelmäßige Veröffentlichung möglich? Wie findet man einen Stil, der zu einem passt? Und wie bleibt man dran, wenn niemand zuschaut?</p>
+        <p>Der Workshop richtet sich an alle, die bereits zeichnen und überlegen, ihre Comics online zu veröffentlichen – egal ob Anfänger:innen oder mit ersten Erfahrungen.</p>
+      </div>
+    </div>
+
+    <!-- Agenda -->
+    <div class="kern-section-label">Ablauf</div>
+    <div class="kern-cell-group" style="margin-bottom:var(--s5);">
+      <div class="kern-cell">
+        <div style="font-weight:800;font-size:13px;color:var(--cib-teal);min-width:42px;flex-shrink:0;">18:30</div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__title">Begrüßung & Vorstellung</span>
+          <span class="kern-cell__sub">~10 Min</span>
+        </div>
+      </div>
+      <div class="kern-cell">
+        <div style="font-weight:800;font-size:13px;color:var(--cib-teal);min-width:42px;flex-shrink:0;">18:40</div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__title">Mein Weg: Von 0 auf Stadtlichter</span>
+          <span class="kern-cell__sub">Präsentation ~20 Min</span>
+        </div>
+      </div>
+      <div class="kern-cell">
+        <div style="font-weight:800;font-size:13px;color:var(--cib-teal);min-width:42px;flex-shrink:0;">19:00</div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__title">Tools, Plattformen & Workflows</span>
+          <span class="kern-cell__sub">Demo ~15 Min</span>
+        </div>
+      </div>
+      <div class="kern-cell" style="border-bottom:none;">
+        <div style="font-weight:800;font-size:13px;color:var(--cib-teal);min-width:42px;flex-shrink:0;">19:15</div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__title">Fragen & Diskussion</span>
+          <span class="kern-cell__sub">~15 Min · bis 19:30</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Speaker -->
+    <div class="kern-section-label">Referent:in</div>
+    <div class="kern-cell-group" style="margin-bottom:var(--s5);">
+      <a href="artist-portfolio.html" class="kern-cell kern-cell--chevron">
+        <div class="kern-cell__avatar" style="width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--cib-yellow);">
+          <img src="../FakeImages/Avatar copy 4.png" alt="Max Schreiber" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__title">Max Schreiber</span>
+          <span class="kern-cell__sub">@maxschreiber · Webcomic „Stadtlichter" · Berlin</span>
+        </div>
+      </a>
+      <div style="padding:0 var(--s4) var(--s4);font-size:0.88rem;line-height:1.65;color:var(--color-text-muted);">
+        Max zeichnet seit 2021 den Slice-of-Life-Webcomic „Stadtlichter" – Alltagsgeschichten aus Berlin, die er wöchentlich auf Instagram und Webtoon veröffentlicht. Sein Tisch auf der CIB 2027 ist <strong style="color:var(--color-text);">Tisch 7, Halle A</strong>.
+      </div>
+    </div>
+
+    <!-- Ort -->
+    <div class="kern-section-label">Ort</div>
+    <div class="kern-cell-group" style="margin-bottom:var(--s5);">
+      <div class="kern-cell">
+        <div class="kern-cell__icon kern-cell__icon--yellow">
+          <svg class="lucide" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="kern-cell__content">
+          <span class="kern-cell__title">Museum für Kommunikation Berlin</span>
+          <span class="kern-cell__sub">Raum 2 · 1. OG · Leipziger Str. 16, 10117 Berlin</span>
+        </div>
+      </div>
+      <!-- OSM Map embed -->
+      <div style="position:relative; border-radius:0 0 var(--r-card) var(--r-card); overflow:hidden; height:180px;">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=13.3818%2C52.5066%2C13.3868%2C52.5092&amp;layer=mapnik&amp;marker=52.5079%2C13.3843"
+          style="width:100%;height:100%;border:none;display:block;"
+          title="Karte: Museum für Kommunikation Berlin"
+          loading="lazy"
+        ></iframe>
+        <a href="https://www.google.com/maps/search/Museum+für+Kommunikation+Berlin" target="_blank" rel="noopener"
+          style="position:absolute;bottom:8px;right:8px;background:rgba(255,255,255,0.92);border:1px solid var(--color-warm-mist);border-radius:8px;padding:5px 10px;font-size:11px;font-weight:700;color:var(--cib-navy);text-decoration:none;display:flex;align-items:center;gap:4px;backdrop-filter:blur(4px);">
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+          Google Maps
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="kern-alert kern-alert--success ev-own-alert" style="border-radius:var(--r-card);margin-bottom:var(--s5);">
+      <svg class="kern-alert__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div><strong>Das bist du!</strong> Dieser Workshop ist dein eigener Slot. Du bist als Referent:in bestätigt.</div>
+    </div>
+
+    <!-- Weitere Events -->
+    <div class="kern-section-label">Weitere Events am selben Tag</div>
+    <div class="kern-cell-group">
+      <a href="event-detail.html" class="kern-event-cell">
+        <span class="kern-event-cell__time">12:00</span>
+        <span class="kern-event-cell__dot" style="background:var(--cib-teal);"></span>
+        <div class="kern-event-cell__body">
+          <span class="kern-event-cell__title">Inking Workshop – Bleistift zur Tusche</span>
+          <span class="kern-event-cell__meta">Raum 2 · Sara Weiss</span>
+        </div>
+        <div class="kern-event-cell__right"><span class="kern-badge kern-badge--teal">Workshop</span></div>
+      </a>
+      <a href="event-detail.html" class="kern-event-cell">
+        <span class="kern-event-cell__time">15:00</span>
+        <span class="kern-event-cell__dot" style="background:var(--cib-navy);"></span>
+        <div class="kern-event-cell__body">
+          <span class="kern-event-cell__title">Comic &amp; KI – Feinde oder Freunde?</span>
+          <span class="kern-event-cell__meta">Hauptbühne · Panel</span>
+        </div>
+        <div class="kern-event-cell__right"><span class="kern-badge kern-badge--navy">Podium</span></div>
+      </a>
+    </div>
+
+  </div><!-- /kern-main-col -->
+
+</div><!-- /kern-app-layout -->
+</main>
+
+<nav class="kern-bottom-nav" aria-label="Hauptnavigation">
+  <a href="index.html" class="kern-bottom-nav__item">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Home
+  </a>
+  <a href="artists.html" class="kern-bottom-nav__item">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    Artists
+  </a>
+  <a href="events.html" class="kern-bottom-nav__item active">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+    Events
+  </a>
+  <a href="chat.html" class="kern-bottom-nav__item">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Chat
+  </a>
+  <a href="artist-portfolio.html" class="kern-bottom-nav__item">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    Profil
+  </a>
+</nav>
+
+
+<!-- App Drawer -->
+<div class="kern-drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="kern-drawer" id="appDrawer" aria-hidden="true">
+  <div class="kern-drawer__head">
+    <div class="kern-drawer__logo-mark">
+      <svg viewBox="87 177 62 72" width="22" height="22" fill="currentColor"><path fill-rule="evenodd" d="M134.4,197.1c3.4,7.1,5.9,17.1,5.9,31.1,0,.1,0,.2-.2.3-7.9,4.1-20.8,4.4-24.8,4.6,0,0-.2,0-.2.1-.3.5-1.4,2.7-1.4,5.6,0,2.3.7,4.6,1.1,5.8,0,.3-.2.5-.4.4-4.4-2.5-8.3-6.7-9.1-12.6,0-.1-.1-.2-.3-.3-4.6-.4-9.3-1.2-13.4-3-1.1-.5-1.8-1.7-1.8-2.9.3-13.7,3-23.1,6.6-29.7,0,0,0,0-.1,0-3.5,0-6.4-.4-6.3-5.6,0-6.4,2.9-13.3,6.4-13.3,3.3,0,5.9,4.3,6.3,10,0,.3.3.4.5.2,5.1-4.6,10.1-5.7,11.7-5.9.2,0,.3-.2.3-.3v-2c0-.2.2-.3.4-.3,1.5.3,6.9,2,12.2,7.9.2.2.5.1.5-.2.5-5.3,3.2-9.2,6.3-9.2,3.5,0,6.3,6.9,6.3,13.3s-4.5,5.6-6,5.6c-.2,0-.4.2-.3.4"/></svg>
+    </div>
+    <div>
+      <div class="kern-drawer__title">AALY</div>
+      <div class="kern-drawer__subtitle">Comic Invasion Berlin 2027</div>
+    </div>
+    <button class="kern-drawer__close" onclick="closeDrawer()" aria-label="Schließen">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="kern-drawer__section">
+    <div class="kern-drawer__section-label">Navigation</div>
+    <a href="index.html" class="kern-drawer__item">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Übersicht
+    </a>
+    <a href="artists.html" class="kern-drawer__item">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Artist Alley
+    </a>
+    <a href="events.html" class="kern-drawer__item">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+      Events
+    </a>
+    <a href="chat.html" class="kern-drawer__item">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Chat & Community
+    </a>
+  </div>
+
+  <div class="kern-drawer__divider"></div>
+
+  <div class="kern-drawer__section">
+    <div class="kern-drawer__section-label">Mein Bereich</div>
+    <a href="#" class="kern-drawer__item" onclick="return false;">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+      Meine Anmeldung
+    </a>
+    <a href="artist-portfolio.html" class="kern-drawer__item">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Mein Profil
+    </a>
+  </div>
+
+  <div class="kern-drawer__divider"></div>
+
+  <div class="kern-drawer__section">
+    <div class="kern-drawer__section-label">Maniacgeek</div>
+    <a href="#" class="kern-drawer__item" onclick="return false;">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      Zurück zu Maniacgeek
+    </a>
+  </div>
+
+  <div class="kern-drawer__user">
+    <img src="../FakeImages/Avatar copy 4.png" alt="Max Schreiber" class="kern-drawer__avatar">
+    <div>
+      <div class="kern-drawer__user-name">Max Schreiber</div>
+      <div class="kern-drawer__user-role">Artist · Mitglied</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openDrawer() {
+  document.getElementById('appDrawer').classList.add('open');
+  document.getElementById('drawerOverlay').classList.add('open');
+  document.getElementById('appDrawer').removeAttribute('aria-hidden');
+}
+function closeDrawer() {
+  document.getElementById('appDrawer').classList.remove('open');
+  document.getElementById('drawerOverlay').classList.remove('open');
+  document.getElementById('appDrawer').setAttribute('aria-hidden','true');
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeDrawer(); });
+</script>
+
+</body>
+</html>

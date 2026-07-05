@@ -132,7 +132,7 @@ strong { font-weight: 700; }
 }
 .kern-kopfzeile__logo {
   display: flex; align-items: center; gap: var(--s3);
-  text-decoration: none; color: #fff;
+  text-decoration: none; color: #f7f0e6;
   font-weight: 900; font-size: var(--text-lg);
   letter-spacing: -0.02em; flex-shrink: 0;
 }
@@ -1349,7 +1349,7 @@ a.kern-cell:hover, a.kern-cell:active { background: var(--color-surface); }
 .kern-kopfzeile__logo-btn {
   display: flex; align-items: center; gap: 8px;
   background: none; border: none; cursor: pointer;
-  color: inherit; font: inherit; padding: 0; text-decoration: none;
+  color: #f7f0e6; font: inherit; font-weight: 900; padding: 0; text-decoration: none;
 }
 
 /* ── Maskottchen-Platzierungen ── */
